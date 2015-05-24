@@ -1,0 +1,64 @@
+body {
+  background: white none;
+  color: black;
+  font-family: sans-serif;
+  padding: 0 15px 0 0;
+  margin-left: 0em; 
+}
+
+:link { 
+  color: #41597A;
+}
+
+:visited { 
+  color: #597ba8;
+}
+
+div#content {
+  margin-left: 11%;
+}
+
+div#main {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+table { 
+  padding: 5px; 
+} 
+
+dl { 
+  margin-top: 0em; 
+  margin-bottom: 0.5em; 
+}
+
+dt { 
+  margin-top: 1em; 
+}
+dd {
+  margin-left: 11%;
+}
+
+b {
+  color: darkred;
+}
+
+i {
+  color: darkgreen;
+}
+
+div.toc dt { 
+  margin-top: 0px; 
+}
+p { 
+  text-align: justify; 
+}
+
+p, h1, h2, h3, h4, h5, h6, td, th { 
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  color: rgb(82,80,82);
+  background-color: transparent;
+}
