@@ -1,0 +1,88 @@
+<HTML><HEAD><TITLE>Manpage of SEQ</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+seq - 打印数列
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>seq</B> [<I>选项</I>]... <I>尾数</I>
+<BR>
+
+<B>seq</B> [<I>选项</I>]... <I>首数 尾数</I>
+<BR>
+
+<B>seq</B> [<I>选项</I>]... <I>首数 增量 尾数</I>
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+以增量为步长，打印从首数到尾数的数列。
+<P>
+
+必选参数对长短选项同时适用。
+<DL COMPACT>
+<DT><B>-f</B>, <B>--format</B>=<I>格式</I></DT><DD>
+使用printf样式浮点格式
+</DD><DT><B>-s</B>, <B>--separator</B>=<I>字符串</I></DT><DD>
+以指定字符串分隔数据（默认值为\n）
+</DD><DT><B>-w</B>, <B>--equal-width</B></DT><DD>
+在数据前填充零以使之等宽
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<P>
+
+首数和增量的默认值为1。注意，在尾数小于首数的时候，增量默认值仍旧是1。数列生成的终止条件是当前数值与增量的和大于尾数。通常情况下，若首数小于尾数，增量应当用正值；若首数大于尾数，增量应当用负值。首数，增量和尾数都被视为浮点数。若首数，增量和尾数都是精度最高为
+PREC 的定点十进制数，那么指定格式默认为%.PRECf，否则为 %g。
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 Ulrich Drepper 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 seq 的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/seq">http://www.gnu.org/software/coreutils/seq</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) seq invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>

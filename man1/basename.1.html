@@ -1,0 +1,101 @@
+<HTML><HEAD><TITLE>Manpage of BASENAME</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+basename - 去除文件名中的目录与后缀
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>basename</B> <I>名称 </I>[<I>后缀</I>]
+<BR>
+
+<B>basename</B> <I>选项</I>... <I>名称</I>...
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+打印已经移除所有目录相关信息后的（文件）名称。若特别指定，则同时移除指定的后缀名。
+<P>
+
+必选参数对长短选项同时适用。
+<DL COMPACT>
+<DT><B>-a</B>, <B>--multiple</B></DT><DD>
+支持多个参数，把每个参数看作一个（文件）名称来处理。
+</DD><DT><B>-s</B>, <B>--suffix</B>=<I>SUFFIX</I></DT><DD>
+移除后缀；同时隐含 <B>-a</B>
+</DD><DT><B>-z</B>, <B>--zero</B></DT><DD>
+使每行输出以 NUL 字符结束，不添加换行符
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+</div>
+<h2>范例</h2>
+<div id="content">
+
+<DL COMPACT>
+<DT>basename /usr/bin/sort</DT><DD>
+-&gt; &quot;sort&quot;
+</DD><DT>basename include/stdio.h .h</DT><DD>
+-&gt; &quot;stdio&quot;
+</DD><DT>basename -s .h include/stdio.h</DT><DD>
+-&gt; &quot;stdio&quot;
+</DD><DT>basename -a any/str1 any/str2</DT><DD>
+-&gt; &quot;str1&quot; 后接 &quot;str2&quot;
+</DD></DL>
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 David MacKenzie 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 basename
+的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+<A HREF="../man1/dirname.1.html">dirname</A>(1), <A HREF="../man1/readlink.1.html">readlink</A>(1)
+<P>
+
+<BR>
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/basename">http://www.gnu.org/software/coreutils/basename</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) basename invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>

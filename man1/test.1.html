@@ -1,0 +1,171 @@
+<HTML><HEAD><TITLE>Manpage of TEST</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+test - 检查文件类型并比较值
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>test</B> <I>表达式</I>
+<BR>
+
+<B>test</B>
+<P>
+<BR>
+
+<B>[</B> <I>表达式 </I>]
+<BR>
+
+<B>[</B> ]
+<BR>
+
+<B>[</B> <I>选项</I>
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+退出状态值取决于表达式。
+<DL COMPACT>
+<DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<P>
+
+表达式被省略，则默认为假。否则，表达式可能为真或假，且以此设置返回状态。可能出现的情况如下所示：
+<DL COMPACT>
+<DT>( 表达式 )</DT><DD>
+表达式为真
+</DD><DT>! 表达式</DT><DD>
+表达式为假
+</DD><DT>表达式1 <B>-a</B> 表达式2</DT><DD>
+表达式1 与表达式2 皆为真
+</DD><DT>表达式1 <B>-o</B> 表达式2</DT><DD>
+表达式1 或表达式2 为真
+</DD><DT><B>-n</B> 字符串</DT><DD>
+字符串长度非零
+</DD><DT>STRING</DT><DD>
+等价于 <B>-n</B> 字符串
+</DD><DT><B>-z</B> 字符串</DT><DD>
+字符串的长度为 0
+</DD><DT>字符串1 = 字符串2</DT><DD>
+字符串相等
+</DD><DT>字符串1 != 字符串2</DT><DD>
+字符串不相等
+</DD><DT>整数1 <B>-eq</B> 整数2</DT><DD>
+整数1 与整数2 相等
+</DD><DT>整数1 <B>-ge</B> 整数2</DT><DD>
+整数1 大于或等于整数2
+</DD><DT>整数1 <B>-gt</B> 整数2</DT><DD>
+整数1 大于整数2
+</DD><DT>整数1 <B>-le</B> 整数2</DT><DD>
+整数1 小于或等于整数2
+</DD><DT>整数1 <B>-lt</B> 整数2</DT><DD>
+整数1 小于整数2
+</DD><DT>整数1 <B>-ne</B> 整数2</DT><DD>
+整数1 和整数2 不相等
+</DD><DT>文件1 <B>-ef</B> 文件2</DT><DD>
+文件1 和文件2 拥有相同的设备编号与 inode 编号
+</DD><DT>文件1 <B>-nt</B> 文件2</DT><DD>
+文件1 在修改时间上新于文件2
+</DD><DT>文件1 <B>-ot</B> 文件2</DT><DD>
+文件1 比文件2 更旧
+</DD><DT><B>-b</B> 文件</DT><DD>
+文件存在且为块特殊文件
+</DD><DT><B>-c</B> 文件</DT><DD>
+文件存在且为字符特殊文件
+</DD><DT><B>-d</B> 文件</DT><DD>
+文件存在且为目录
+</DD><DT><B>-e</B> 文件</DT><DD>
+文件存在
+</DD><DT><B>-f</B> 文件</DT><DD>
+文件存在且为普通文件
+</DD><DT><B>-g</B> 文件</DT><DD>
+文件存在且被设置了 set-group-ID 位
+</DD><DT><B>-g</B> 文件</DT><DD>
+文件存在且为有效组ID 所有
+</DD><DT><B>-h</B> 文件</DT><DD>
+文件存在且为一个符号链接（与 <B>-L</B> 相同）
+</DD><DT><B>-k</B> 文件</DT><DD>
+文件存在且被设置粘着位
+</DD><DT><B>-L</B> 文件</DT><DD>
+文件存在且为一个符号链接（与 <B>-h</B> 相同）
+</DD><DT><B>-O</B> 文件</DT><DD>
+文件存在且为有效用户ID 所有
+</DD><DT><B>-p</B> 文件</DT><DD>
+文件存在且为命名管道
+</DD><DT><B>-r</B> 文件</DT><DD>
+文件存在且被授予读权限
+</DD><DT><B>-s</B> 文件</DT><DD>
+文件存在且其大小大于零
+</DD><DT><B>-S</B> 文件</DT><DD>
+文件存在且为套接字
+</DD><DT><B>-t</B> FD</DT><DD>
+文件描述符 FD 在某个终端打开
+</DD><DT><B>-u</B> 文件</DT><DD>
+文件存在且被设置了 set-user-ID 位
+</DD><DT><B>-w</B> 文件</DT><DD>
+文件存在且被赋予了写权限
+</DD><DT><B>-x</B> 文件</DT><DD>
+文件存在且被授予执行（或搜索）权限
+</DD></DL>
+<P>
+
+除了 <B>-h</B> 和 <B>-L</B>，所有与指定文件相关的测试都跟随符号链接。请注意在 shell
+中圆括号需要被转义（例如，使用反斜线）。也可以把“<B>-l</B> 字符串”作为指定整数，其值为该字符串的长度。
+<P>
+
+注记：[ 接受 <B>--help</B> 和 <B>--version</B> 选项，但是 test 并非如此。test 将它们与其它非空字符串同等看待。
+<P>
+
+注意：您的 shell 可能内置了自己的 test 和/或 [ 程序版本，它会覆盖这里所提及的相应版本。请查阅您的 shell 文档获知它所支持的选项。
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 Kevin Braunsdorf 和 Matthew Bradburn 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 [ 的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/[">http://www.gnu.org/software/coreutils/[</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) test invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>

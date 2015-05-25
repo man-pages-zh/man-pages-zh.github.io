@@ -1,0 +1,110 @@
+<HTML><HEAD><TITLE>Manpage of ECHO</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+echo - 显示一行文本
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>echo</B> [<I>短选项</I>]... [<I>字符串列表</I>]...
+<BR>
+
+<B>echo</B> <I>长选项</I>
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+将字符串列表中的字符输出到标准输出。
+<DL COMPACT>
+<DT><B>-n</B></DT><DD>
+不输出尾随的换行符
+</DD><DT><B>-e</B></DT><DD>
+启用解释反斜杠的转义功能
+</DD><DT><B>-E</B></DT><DD>
+禁用解释反斜杠的转义功能（默认）
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<P>
+
+若 <B>-e</B> 可用，则以下序列即可识别：
+<DL COMPACT>
+<DT>\\</DT><DD>
+反斜线
+</DD><DT>\a</DT><DD>
+报警符(BEL)
+</DD><DT>\b</DT><DD>
+退格符
+</DD><DT>\c</DT><DD>
+禁止尾随的换行符
+</DD><DT>\e</DT><DD>
+escape 字符
+</DD><DT>\f</DT><DD>
+换页符
+</DD><DT>\n</DT><DD>
+另起一行
+</DD><DT>\r</DT><DD>
+回到行首
+</DD><DT>\t</DT><DD>
+水平制表符
+</DD><DT>\v</DT><DD>
+垂直制表符
+</DD><DT>\0NNN</DT><DD>
+字节数以八进制数 NNN (1至3位)表示
+</DD><DT>\xHH</DT><DD>
+字节数以十六进制数 HH (1至2位)表示
+</DD></DL>
+<P>
+
+注意：您的 shell 可能内置了自己的 echo 程序版本，它会覆盖这里所提及的相应版本。请查阅您的 shell 文档获知它所支持的选项。
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 Brian Fox 和 Chet Ramey 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 echo 的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/echo">http://www.gnu.org/software/coreutils/echo</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) echo invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>

@@ -1,0 +1,107 @@
+<HTML><HEAD><TITLE>Manpage of UNIQ</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+uniq - 报告或省略重复行
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>uniq</B> [<I>选项</I>]... [<I>输入 </I>[<I>输出</I>]]
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+从输入文件（或标准输入）筛选一组相邻的匹配行，写入到输出文件（或标准输出）。
+<P>
+
+如没有指定选项，则只保留一组匹配行中的第一行。
+<P>
+
+必选参数对长短选项同时适用。
+<DL COMPACT>
+<DT><B>-c</B>, <B>--count</B></DT><DD>
+每行前附上重复出现的次数作为前缀
+</DD><DT><B>-d</B>, <B>--repeated</B></DT><DD>
+仅显示重复行，每组一个
+</DD><DT><B>-D</B>, <B>--all-repeated</B>[=<I>METHOD</I>]</DT><DD>
+显示所有重复行 METHOD={none(default),prepend,separate}
+</DD><DT><B>-f</B>, <B>--skip-fields</B>=<I>N</I></DT><DD>
+比较时跳过前 N 个域
+</DD><DT><B>--group</B>[=<I>METHOD</I>]</DT><DD>
+显示所有行，用一个空行分隔每一组 METHOD={separate(default), prepend, append, both}
+</DD><DT><B>-i</B>, <B>--ignore-case</B></DT><DD>
+比较时忽略大小写
+</DD><DT><B>-s</B>, <B>--skip-chars</B>=<I>N</I></DT><DD>
+比较时跳过前 N 个字符
+</DD><DT><B>-u</B>, <B>--unique</B></DT><DD>
+只显示不重复的行
+</DD><DT><B>-z</B>, <B>--zero-terminated</B></DT><DD>
+以 NUL 作为行的分隔符，而非换行符
+</DD><DT><B>-w</B>, <B>--check-chars</B>=<I>N</I></DT><DD>
+对每行第 N 个字符以后的内容不作比较
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<P>
+
+域指一个由空字符（通常是空格和/或制表符）和紧随的非空字符组成的序列。同时使用跳过域和跳过字符选项时，先跳过域再跳过字符。
+<P>
+
+注意：“uniq”只检测那些相邻的重复行。你或许需要先对输入排序，或者使用“sort
+<B>-u</B>”而非“uniq”。另外，比较的细则会依据“LC_COLLATE”所指定的规则。
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 Richard M. Stallman 和 David MacKenzie 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 uniq 的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+<A HREF="../man1/comm.1.html">comm</A>(1), <A HREF="../man1/join.1.html">join</A>(1), <A HREF="../man1/sort.1.html">sort</A>(1)
+<P>
+
+<BR>
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/uniq">http://www.gnu.org/software/coreutils/uniq</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) uniq invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>

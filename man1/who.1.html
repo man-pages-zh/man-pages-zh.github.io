@@ -1,0 +1,107 @@
+<HTML><HEAD><TITLE>Manpage of WHO</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+who - 显示已登录用户
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>who</B> [<I>选项</I>]... [ <I>文件 | 参数1 参数2 </I>]
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+显示与当前登录用户有关的信息。
+<DL COMPACT>
+<DT><B>-a</B>, <B>--all</B></DT><DD>
+等价于 <B>-b</B> <B>-d</B> <B>--login</B> <B>-p</B> <B>-r</B> <B>-t</B> <B>-T</B> <B>-u</B>
+</DD><DT><B>-b</B>, <B>--boot</B></DT><DD>
+最近一次系统引导的时间
+</DD><DT><B>-d</B>, <B>--dead</B></DT><DD>
+显示死进程
+</DD><DT><B>-H</B>, <B>--heading</B></DT><DD>
+显示表格的表头
+</DD><DT><B>--ips</B></DT><DD>
+显示 IP地址而不是主机名。加上 <B>--lookup</B>，则会尽可能基于已存储的 IP 规范化，而不是已存储的主机名
+</DD><DT><B>-l</B>, <B>--login</B></DT><DD>
+显示系统登录进程
+</DD><DT><B>--lookup</B></DT><DD>
+试图通过 DNS 规范主机名
+</DD><DT><B>-m</B></DT><DD>
+仅显示和标准输入关联的主机名和用户
+</DD><DT><B>-p</B>, <B>--process</B></DT><DD>
+显示由 init 生成的活跃进程
+</DD><DT><B>-q</B>, <B>--count</B></DT><DD>
+所有登录名称与已登录用户数量
+</DD><DT><B>-r</B>, <B>--runlevel</B></DT><DD>
+显示当前运行级别
+</DD><DT><B>-s</B>, <B>--short</B></DT><DD>
+仅显示名称、线路与时间（默认）
+</DD><DT><B>-t</B>, <B>--time</B></DT><DD>
+显示最近一次系统时钟更改
+</DD><DT><B>-T</B>, <B>-w</B>, <B>--mesg</B></DT><DD>
+添加用户状态信息，如 +, - 或 ?
+</DD><DT><B>-u</B>, <B>--users</B></DT><DD>
+列出已登陆用户
+</DD><DT><B>--message</B></DT><DD>
+等价于 <B>-T</B>
+</DD><DT><B>--writable</B></DT><DD>
+等价于 <B>-T</B>
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<P>
+
+如果没有指定文件，默认使用 <I>/var/run/utmp</I>。<I>/var/log/wtmp</I> 常被指定为文件参数。如果给出参数1 和参数2，则等价于
+<B>-m</B>：两个参数通常可以是 'am i' 或 'mom likes'。
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 Joseph Arceneaux, David MacKenzie 和 Michael Stone 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 who 的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/who">http://www.gnu.org/software/coreutils/who</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) who invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>

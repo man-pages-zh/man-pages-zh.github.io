@@ -1,0 +1,86 @@
+<HTML><HEAD><TITLE>Manpage of UNEXPAND</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+unexpand - 将空格转换为制表符
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>unexpand</B> [<I>选项</I>]... [<I>文件列表</I>]...
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+将所列文件中的空格转换为制表符，并输出到标准输出。如果没有指定文件，或者指定文件为&quot;-&quot;，则从标准输入读取。
+<P>
+
+必选参数对长短选项同时适用。
+<DL COMPACT>
+<DT><B>-a</B>, <B>--all</B></DT><DD>
+转换所有的空格，而不仅仅是行首空格
+</DD><DT><B>--first-only</B></DT><DD>
+只转换行首空格（覆盖 <B>-a</B> 选项）
+</DD><DT><B>-t</B>, <B>--tabs</B>=<I>N</I></DT><DD>
+每 N 个字符作为一个制表符而不是默认的 8 （启用 <B>-a</B> 选项）
+</DD><DT><B>-t</B>, <B>--tabs</B>=<I>列表</I></DT><DD>
+指定制表符位置列表，以逗号分隔（启用 <B>-a</B> 选项）
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 David MacKenzie 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 unexpand
+的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+<A HREF="../man1/expand.1.html">expand</A>(1)
+<P>
+
+<BR>
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/unexpand">http://www.gnu.org/software/coreutils/unexpand</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) unexpand invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>

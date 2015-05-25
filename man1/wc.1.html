@@ -1,0 +1,84 @@
+<HTML><HEAD><TITLE>Manpage of WC</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</HEAD><BODY>
+<div id="main">
+
+<h2>名称</h2>
+<div id="content">
+
+wc - 输出文件中的行数、单词数、字节数
+</div>
+<h2>概述</h2>
+<div id="content">
+
+<B>wc</B> [<I>选项</I>]... [<I>文件列表</I>]...
+<BR>
+
+<B>wc</B> [<I>选项</I>]... <I>--files0-from=F</I>
+</div>
+<h2>描述</h2>
+<div id="content">
+
+
+<P>
+
+对每个文件输出行、单词、和字节统计数，如果指定的文件多于一个则还有一个行数的总计。没有指定文件或指定的文件是“-”，则读取标准输入。单词指以空格分隔的长度非零的字符序列。下列选项或可用于选择显示哪些统计数，但显示顺序总是：行数、单词数、字符数、字节数、最长的行的长度。
+<DL COMPACT>
+<DT><B>-c</B>, <B>--bytes</B></DT><DD>
+输出字节统计数
+</DD><DT><B>-m</B>, <B>--chars</B></DT><DD>
+输出字符统计数
+</DD><DT><B>-l</B>, <B>--lines</B></DT><DD>
+输出换行符统计数
+</DD><DT><B>--files0-from</B>=<I>F</I></DT><DD>
+将文件F 中的以 NUL 结尾的名字所指定的文件作为待统计文件；如果文件F 为“-”，则从标准输入读取这些名字
+</DD><DT><B>-L</B>, <B>--max-line-length</B></DT><DD>
+输出最长的行的长度
+</DD><DT><B>-w</B>, <B>--words</B></DT><DD>
+输出单词统计数
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+</div>
+<h2>作者</h2>
+<div id="content">
+
+由 Paul Rubin 和 David MacKenzie 编写。
+</div>
+<h2>报告错误</h2>
+<div id="content">
+
+GNU coreutils 的在线帮助： &lt;<A HREF="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</A>&gt;
+<BR>
+
+请向 &lt;<A HREF="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</A>&gt; 报告 wc 的翻译错误。
+</div>
+<h2>版权</h2>
+<div id="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;.
+<BR>
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div id="content">
+
+完整文档请见： &lt;<A HREF="http://www.gnu.org/software/coreutils/wc">http://www.gnu.org/software/coreutils/wc</A>&gt;
+<BR>
+
+或者在本地使用： info aq(coreutils) wc invocationaq
+<P>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</A>,
+using the manual pages.<br>
+Time: 19:17:41 GMT, May 24, 2015</body>
+</HTML>
