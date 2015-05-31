@@ -17,17 +17,24 @@ body {
 .content {
     margin-left: 3rem;
     color: black;
-    font-weight: bolder;
+    border-left: 3px lavender solid;
+    padding-left: 1rem;
+}
+#content {
+    margin-left: 3rem;
+    color: black;
     border-left: 3px lavender solid;
     padding-left: 1rem;
 }
 
 div#main {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
     max-width: 500px;
     border-left: 3px lavender solid;
     padding-left: 1rem;
-    padding-top: 2rem;
+
 }
 
 dl {
@@ -67,9 +74,6 @@ h1, h2, h3, h4, h5, h6 {
 .tooltip{
     display: inline;
     position: relative;
-}
-dd:hover {
-    cursor: pointer;
 }
 
 .tooltip:hover:after{
