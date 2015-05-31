@@ -1,64 +1,108 @@
 body {
-  background: white none;
-  color: black;
-  font-family: sans-serif;
-  padding: 0 15px 0 0;
-  margin-left: 0em; 
+    font-family: Consolas, monospace, sans-serif;
 }
 
-:link { 
-  color: #41597A;
+.raw {
+    visibility: hidden;
 }
 
-:visited { 
-  color: #597ba8;
+:link {
+    color: #41597A;
 }
 
-div#content {
-  margin-left: 11%;
+:visited {
+    color: #597ba8;
+}
+
+.content {
+    margin-left: 3rem;
+    color: black;
+    font-weight: bolder;
+    border-left: 3px lavender solid;
+    padding-left: 1rem;
 }
 
 div#main {
-  margin-left: 1em;
-  margin-right: 1em;
+    margin: auto;
+    max-width: 500px;
+    border-left: 3px lavender solid;
+    padding-left: 1rem;
+    padding-top: 2rem;
 }
 
-table { 
-  padding: 5px; 
-} 
-
-dl { 
-  margin-top: 0em; 
-  margin-bottom: 0.5em; 
+dl {
+    margin-bottom: 0.5em;
 }
 
-dt { 
-  margin-top: 1em; 
+dt {
+    margin-top: 1em;
 }
+
 dd {
-  margin-left: 11%;
+    display: inline;
+    font-weight: lighter;
 }
 
 b {
-  color: darkred;
+    color: darkred;
 }
 
 i {
-  color: darkgreen;
+    color: darkgreen;
 }
 
-div.toc dt { 
-  margin-top: 0px; 
-}
-p { 
-  text-align: justify; 
+p {
+    text-align: justify;
 }
 
-p, h1, h2, h3, h4, h5, h6, td, th { 
-  font-family: sans-serif;
+p, h1, h2, h3, h4, h5, h6, td, th {
+    font-family: sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 { 
-  color: rgb(82,80,82);
-  background-color: transparent;
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(82, 80, 82);
+    background-color: transparent;
+}
+
+.tooltip{
+    display: inline;
+    position: relative;
+}
+dd:hover {
+    cursor: pointer;
+}
+
+.tooltip:hover:after{
+    font-weight: lighter;
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 350px;
+}
+
+.tooltip:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+
+dd {
+    display: inline;
+    color: black;
+}
+
+a {
+    text-decoration: none;
 }
