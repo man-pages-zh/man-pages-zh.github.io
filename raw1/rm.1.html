@@ -1,0 +1,149 @@
+<html><head><title>Manpage of RM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+rm - remove files or directories
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>rm</B>
+
+[<I>OPTION</I>]... <I>FILE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+This manual page
+documents the GNU version of
+<B>rm</B>.
+
+<B>rm</B>
+
+removes each specified file.  By default, it does not remove
+directories.
+
+If the <I>-I</I> or <I>--interactive=once</I> option is given,
+and there are more than three files or the <I>-r</I>, <I>-R</I>,
+or <I>--recursive</I> are given, then
+<B>rm</B>
+
+prompts the user for whether to proceed with the entire operation.  If
+the response is not affirmative, the entire command is aborted.
+
+Otherwise, if a file is unwritable, standard input is a terminal, and
+the <I>-f</I> or <I>--force</I> option is not given, or the
+<I>-i</I> or <I>--interactive=always</I> option is given,
+<B>rm</B>
+
+prompts the user for whether to remove the file.  If the response is
+not affirmative, the file is skipped.
+</div>
+<h2>OPTIONS</h2>
+<div class="content">
+
+<p>
+
+Remove (unlink) the FILE(s).
+<DL COMPACT>
+<DT><B>-f</B>, <B>--force</B></DT><DD>
+ignore nonexistent files and arguments, never prompt
+</DD><DT><B>-i</B></DT><DD>
+prompt before every removal
+</DD><DT><B>-I</B></DT><DD>
+prompt once before removing more than three files, or
+when removing recursively; less intrusive than <B>-i</B>,
+while still giving protection against most mistakes
+</DD><DT><B>--interactive</B>[=<I>WHEN</I>]</DT><DD>
+prompt according to WHEN: never, once (<B>-I</B>), or
+always (<B>-i</B>); without WHEN, prompt always
+</DD><DT><B>--one-file-system</B></DT><DD>
+when removing a hierarchy recursively, skip any
+directory that is on a file system different from
+that of the corresponding command line argument
+</DD><DT><B>--no-preserve-root</B></DT><DD>
+do not treat '/' specially
+</DD><DT><B>--preserve-root</B></DT><DD>
+do not remove '/' (default)
+</DD><DT><B>-r</B>, <B>-R</B>, <B>--recursive</B></DT><DD>
+remove directories and their contents recursively
+</DD><DT><B>-d</B>, <B>--dir</B></DT><DD>
+remove empty directories
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+explain what is being done
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+By default, rm does not remove directories.  Use the <B>--recursive</B> (<B>-r</B> or <B>-R</B>)
+option to remove each listed directory, too, along with all of its contents.
+<p>
+
+To remove a file whose name starts with a '-', for example '-foo',
+use one of these commands:
+<DL COMPACT>
+<DT></DT><DD>
+rm <B>--</B> <B>-foo</B>
+</DD><DT></DT><DD>
+rm ./-foo
+</DD></DL>
+<p>
+
+Note that if you use rm to remove a file, it might be possible to recover
+some of its contents, given sufficient expertise and/or time.  For greater
+assurance that the contents are truly unrecoverable, consider using shred.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Paul Rubin, David MacKenzie, Richard M. Stallman,
+and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report rm translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man1/unlink.1.html">unlink</a>(1), <a href="../man2/unlink.2.html">unlink</a>(2), <a href="../man1/chattr.1.html">chattr</a>(1), <a href="../man1/shred.1.html">shred</a>(1)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/rm">http://www.gnu.org/software/coreutils/rm</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) rm invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

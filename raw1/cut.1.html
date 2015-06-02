@@ -1,0 +1,114 @@
+<html><head><title>Manpage of CUT</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+cut - remove sections from each line of files
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>cut</B>
+
+<I>OPTION</I>... [<I>FILE</I>]...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Print selected parts of lines from each FILE to standard output.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-b</B>, <B>--bytes</B>=<I>LIST</I></DT><DD>
+select only these bytes
+</DD><DT><B>-c</B>, <B>--characters</B>=<I>LIST</I></DT><DD>
+select only these characters
+</DD><DT><B>-d</B>, <B>--delimiter</B>=<I>DELIM</I></DT><DD>
+use DELIM instead of TAB for field delimiter
+</DD><DT><B>-f</B>, <B>--fields</B>=<I>LIST</I></DT><DD>
+select only these fields;  also print any line
+that contains no delimiter character, unless
+the <B>-s</B> option is specified
+</DD><DT><B>-n</B></DT><DD>
+(ignored)
+</DD><DT><B>--complement</B></DT><DD>
+complement the set of selected bytes, characters
+or fields
+</DD><DT><B>-s</B>, <B>--only-delimited</B></DT><DD>
+do not print lines not containing delimiters
+</DD><DT><B>--output-delimiter</B>=<I>STRING</I></DT><DD>
+use STRING as the output delimiter
+the default is to use the input delimiter
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Use one, and only one of <B>-b</B>, <B>-c</B> or <B>-f</B>.  Each LIST is made up of one
+range, or many ranges separated by commas.  Selected input is written
+in the same order that it is read, and is written exactly once.
+Each range is one of:
+<DL COMPACT>
+<DT>N</DT><DD>
+N'th byte, character or field, counted from 1
+</DD><DT>N-</DT><DD>
+from N'th byte, character or field, to end of line
+</DD><DT>N-M</DT><DD>
+from N'th to M'th (included) byte, character or field
+</DD><DT><B>-M</B></DT><DD>
+from first to M'th (included) byte, character or field
+</DD></DL>
+<p>
+
+With no FILE, or when FILE is -, read standard input.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by David M. Ihnat, David MacKenzie, and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report cut translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/cut">http://www.gnu.org/software/coreutils/cut</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) cut invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

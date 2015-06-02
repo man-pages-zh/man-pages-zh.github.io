@@ -1,0 +1,180 @@
+<html><head><title>Manpage of SORT</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+sort - sort lines of text files
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>sort</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+<br />
+
+<B>sort</B>
+
+[<I>OPTION</I>]... <I>--files0-from=F</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Write sorted concatenation of all FILE(s) to standard output.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+Ordering options:
+<DL COMPACT>
+<DT><B>-b</B>, <B>--ignore-leading-blanks</B></DT><DD>
+ignore leading blanks
+</DD><DT><B>-d</B>, <B>--dictionary-order</B></DT><DD>
+consider only blanks and alphanumeric characters
+</DD><DT><B>-f</B>, <B>--ignore-case</B></DT><DD>
+fold lower case to upper case characters
+</DD><DT><B>-g</B>, <B>--general-numeric-sort</B></DT><DD>
+compare according to general numerical value
+</DD><DT><B>-i</B>, <B>--ignore-nonprinting</B></DT><DD>
+consider only printable characters
+</DD><DT><B>-M</B>, <B>--month-sort</B></DT><DD>
+compare (unknown) &lt; 'JAN' &lt; ... &lt; 'DEC'
+</DD><DT><B>-h</B>, <B>--human-numeric-sort</B></DT><DD>
+compare human readable numbers (e.g., 2K 1G)
+</DD><DT><B>-n</B>, <B>--numeric-sort</B></DT><DD>
+compare according to string numerical value
+</DD><DT><B>-R</B>, <B>--random-sort</B></DT><DD>
+sort by random hash of keys
+</DD><DT><B>--random-source</B>=<I>FILE</I></DT><DD>
+get random bytes from FILE
+</DD><DT><B>-r</B>, <B>--reverse</B></DT><DD>
+reverse the result of comparisons
+</DD><DT><B>--sort</B>=<I>WORD</I></DT><DD>
+sort according to WORD:
+general-numeric <B>-g</B>, human-numeric <B>-h</B>, month <B>-M</B>,
+numeric <B>-n</B>, random <B>-R</B>, version <B>-V</B>
+</DD><DT><B>-V</B>, <B>--version-sort</B></DT><DD>
+natural sort of (version) numbers within text
+</DD></DL>
+<p>
+
+Other options:
+<DL COMPACT>
+<DT><B>--batch-size</B>=<I>NMERGE</I></DT><DD>
+merge at most NMERGE inputs at once;
+for more use temp files
+</DD><DT><B>-c</B>, <B>--check</B>, <B>--check</B>=<I>diagnose-first</I></DT><DD>
+check for sorted input; do not sort
+</DD><DT><B>-C</B>, <B>--check</B>=<I>quiet</I>, <B>--check</B>=<I>silent</I></DT><DD>
+like <B>-c</B>, but do not report first bad line
+</DD><DT><B>--compress-program</B>=<I>PROG</I></DT><DD>
+compress temporaries with PROG;
+decompress them with PROG <B>-d</B>
+</DD><DT><B>--debug</B></DT><DD>
+annotate the part of the line used to sort,
+and warn about questionable usage to stderr
+</DD><DT><B>--files0-from</B>=<I>F</I></DT><DD>
+read input from the files specified by
+NUL-terminated names in file F;
+If F is - then read names from standard input
+</DD><DT><B>-k</B>, <B>--key</B>=<I>KEYDEF</I></DT><DD>
+sort via a key; KEYDEF gives location and type
+</DD><DT><B>-m</B>, <B>--merge</B></DT><DD>
+merge already sorted files; do not sort
+</DD><DT><B>-o</B>, <B>--output</B>=<I>FILE</I></DT><DD>
+write result to FILE instead of standard output
+</DD><DT><B>-s</B>, <B>--stable</B></DT><DD>
+stabilize sort by disabling last-resort comparison
+</DD><DT><B>-S</B>, <B>--buffer-size</B>=<I>SIZE</I></DT><DD>
+use SIZE for main memory buffer
+</DD><DT><B>-t</B>, <B>--field-separator</B>=<I>SEP</I></DT><DD>
+use SEP instead of non-blank to blank transition
+</DD><DT><B>-T</B>, <B>--temporary-directory</B>=<I>DIR</I></DT><DD>
+use DIR for temporaries, not $TMPDIR or <I>/tmp</I>;
+multiple options specify multiple directories
+</DD><DT><B>--parallel</B>=<I>N</I></DT><DD>
+change the number of sorts run concurrently to N
+</DD><DT><B>-u</B>, <B>--unique</B></DT><DD>
+with <B>-c</B>, check for strict ordering;
+without <B>-c</B>, output only the first of an equal run
+</DD><DT><B>-z</B>, <B>--zero-terminated</B></DT><DD>
+line delimiter is NUL, not newline
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+KEYDEF is F[.C][OPTS][,F[.C][OPTS]] for start and stop position, where F is a
+field number and C a character position in the field; both are origin 1, and
+the stop position defaults to the line's end.  If neither <B>-t</B> nor <B>-b</B> is in
+effect, characters in a field are counted from the beginning of the preceding
+whitespace.  OPTS is one or more single-letter ordering options [bdfgiMhnRrV],
+which override global ordering options for that key.  If no key is given, use
+the entire line as the key.
+<p>
+
+SIZE may be followed by the following multiplicative suffixes:
+% 1% of memory, b 1, K 1024 (default), and so on for M, G, T, P, E, Z, Y.
+<p>
+
+With no FILE, or when FILE is -, read standard input.
+<p>
+
+*** WARNING ***
+The locale specified by the environment affects sort order.
+Set LC_ALL=C to get the traditional sort order that uses
+native byte values.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Mike Haertel and Paul Eggert.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report sort translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man1/uniq.1.html">uniq</a>(1)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/sort">http://www.gnu.org/software/coreutils/sort</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) sort invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

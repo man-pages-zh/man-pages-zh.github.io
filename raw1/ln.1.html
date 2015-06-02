@@ -1,0 +1,153 @@
+<html><head><title>Manpage of LN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+ln - make links between files
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>ln</B>
+
+[<I>OPTION</I>]... [<I>-T</I>] <I>TARGET LINK_NAME   (1st form)</I>
+<br />
+
+<B>ln</B>
+
+[<I>OPTION</I>]... <I>TARGET                  (2nd form)</I>
+<br />
+
+<B>ln</B>
+
+[<I>OPTION</I>]... <I>TARGET</I>... <I>DIRECTORY     (3rd form)</I>
+<br />
+
+<B>ln</B>
+
+[<I>OPTION</I>]... <I>-t DIRECTORY TARGET</I>...  <I>(4th form)</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+In the 1st form, create a link to TARGET with the name LINK_NAME.
+In the 2nd form, create a link to TARGET in the current directory.
+In the 3rd and 4th forms, create links to each TARGET in DIRECTORY.
+Create hard links by default, symbolic links with <B>--symbolic</B>.
+By default, each destination (name of new link) should not already exist.
+When creating hard links, each TARGET must exist.  Symbolic links
+can hold arbitrary text; if later resolved, a relative link is
+interpreted in relation to its parent directory.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>--backup</B>[=<I>CONTROL</I>]</DT><DD>
+make a backup of each existing destination file
+</DD><DT><B>-b</B></DT><DD>
+like <B>--backup</B> but does not accept an argument
+</DD><DT><B>-d</B>, <B>-F</B>, <B>--directory</B></DT><DD>
+allow the superuser to attempt to hard link
+directories (note: will probably fail due to
+system restrictions, even for the superuser)
+</DD><DT><B>-f</B>, <B>--force</B></DT><DD>
+remove existing destination files
+</DD><DT><B>-i</B>, <B>--interactive</B></DT><DD>
+prompt whether to remove destinations
+</DD><DT><B>-L</B>, <B>--logical</B></DT><DD>
+dereference TARGETs that are symbolic links
+</DD><DT><B>-n</B>, <B>--no-dereference</B></DT><DD>
+treat LINK_NAME as a normal file if
+it is a symbolic link to a directory
+</DD><DT><B>-P</B>, <B>--physical</B></DT><DD>
+make hard links directly to symbolic links
+</DD><DT><B>-r</B>, <B>--relative</B></DT><DD>
+create symbolic links relative to link location
+</DD><DT><B>-s</B>, <B>--symbolic</B></DT><DD>
+make symbolic links instead of hard links
+</DD><DT><B>-S</B>, <B>--suffix</B>=<I>SUFFIX</I></DT><DD>
+override the usual backup suffix
+</DD><DT><B>-t</B>, <B>--target-directory</B>=<I>DIRECTORY</I></DT><DD>
+specify the DIRECTORY in which to create
+the links
+</DD><DT><B>-T</B>, <B>--no-target-directory</B></DT><DD>
+treat LINK_NAME as a normal file always
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+print name of each linked file
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+The backup suffix is '~', unless set with <B>--suffix</B> or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the <B>--backup</B> option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+<DL COMPACT>
+<DT>none, off</DT><DD>
+never make backups (even if <B>--backup</B> is given)
+</DD><DT>numbered, t</DT><DD>
+make numbered backups
+</DD><DT>existing, nil</DT><DD>
+numbered if numbered backups exist, simple otherwise
+</DD><DT>simple, never</DT><DD>
+always make simple backups
+</DD></DL>
+<p>
+
+Using <B>-s</B> ignores <B>-L</B> and <B>-P</B>.  Otherwise, the last option specified controls
+behavior when a TARGET is a symbolic link, defaulting to <B>-P</B>.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Mike Parker and David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report ln translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man2/link.2.html">link</a>(2), <a href="../man2/symlink.2.html">symlink</a>(2)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/ln">http://www.gnu.org/software/coreutils/ln</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) ln invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

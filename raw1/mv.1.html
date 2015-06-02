@@ -1,0 +1,138 @@
+<html><head><title>Manpage of MV</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+mv - move (rename) files
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>mv</B>
+
+[<I>OPTION</I>]... [<I>-T</I>] <I>SOURCE DEST</I>
+<br />
+
+<B>mv</B>
+
+[<I>OPTION</I>]... <I>SOURCE</I>... <I>DIRECTORY</I>
+<br />
+
+<B>mv</B>
+
+[<I>OPTION</I>]... <I>-t DIRECTORY SOURCE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>--backup</B>[=<I>CONTROL</I>]</DT><DD>
+make a backup of each existing destination file
+</DD><DT><B>-b</B></DT><DD>
+like <B>--backup</B> but does not accept an argument
+</DD><DT><B>-f</B>, <B>--force</B></DT><DD>
+do not prompt before overwriting
+</DD><DT><B>-i</B>, <B>--interactive</B></DT><DD>
+prompt before overwrite
+</DD><DT><B>-n</B>, <B>--no-clobber</B></DT><DD>
+do not overwrite an existing file
+</DD></DL>
+<p>
+
+If you specify more than one of <B>-i</B>, <B>-f</B>, <B>-n</B>, only the final one takes effect.
+<DL COMPACT>
+<DT><B>--strip-trailing-slashes</B></DT><DD>
+remove any trailing slashes from each SOURCE
+argument
+</DD><DT><B>-S</B>, <B>--suffix</B>=<I>SUFFIX</I></DT><DD>
+override the usual backup suffix
+</DD><DT><B>-t</B>, <B>--target-directory</B>=<I>DIRECTORY</I></DT><DD>
+move all SOURCE arguments into DIRECTORY
+</DD><DT><B>-T</B>, <B>--no-target-directory</B></DT><DD>
+treat DEST as a normal file
+</DD><DT><B>-u</B>, <B>--update</B></DT><DD>
+move only when the SOURCE file is newer
+than the destination file or when the
+destination file is missing
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+explain what is being done
+</DD><DT><B>-Z</B>, <B>--context</B></DT><DD>
+set SELinux security context of destination
+file to default type
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+The backup suffix is '~', unless set with <B>--suffix</B> or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the <B>--backup</B> option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+<DL COMPACT>
+<DT>none, off</DT><DD>
+never make backups (even if <B>--backup</B> is given)
+</DD><DT>numbered, t</DT><DD>
+make numbered backups
+</DD><DT>existing, nil</DT><DD>
+numbered if numbered backups exist, simple otherwise
+</DD><DT>simple, never</DT><DD>
+always make simple backups
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Mike Parker, David MacKenzie, and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report mv translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man2/rename.2.html">rename</a>(2)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/mv">http://www.gnu.org/software/coreutils/mv</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) mv invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

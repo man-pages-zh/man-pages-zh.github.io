@@ -1,0 +1,200 @@
+<html><head><title>Manpage of OD</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+od - dump files in octal and other formats
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>od</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+<br />
+
+<B>od</B>
+
+[<I>-abcdfilosx</I>]... [<I>FILE</I>] [[<I>+</I>]<I>OFFSET</I>[<I>.</I>][<I>b</I>]]
+<br />
+
+<B>od</B>
+
+<I>--traditional </I>[<I>OPTION</I>]... [<I>FILE</I>] [[<I>+</I>]<I>OFFSET</I>[<I>.</I>][<I>b</I>] [<I>+</I>][<I>LABEL</I>][<I>.</I>][<I>b</I>]]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Write an unambiguous representation, octal bytes by default,
+of FILE to standard output.  With more than one FILE argument,
+concatenate them in the listed order to form the input.
+With no FILE, or when FILE is -, read standard input.
+<p>
+
+If first and second call formats both apply, the second format is assumed
+if the last operand begins with + or (if there are 2 operands) a digit.
+An OFFSET operand means <B>-j</B> OFFSET.  LABEL is the pseudo-address
+at first byte printed, incremented when dump is progressing.
+For OFFSET and LABEL, a 0x or 0X prefix indicates hexadecimal;
+suffixes may be . for octal and b for multiply by 512.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-A</B>, <B>--address-radix</B>=<I>RADIX</I></DT><DD>
+output format for file offsets; RADIX is one
+of [doxn], for Decimal, Octal, Hex or None
+</DD><DT><B>--endian=</B>{big|little}</DT><DD>
+swap input bytes according the specified order
+</DD><DT><B>-j</B>, <B>--skip-bytes</B>=<I>BYTES</I></DT><DD>
+skip BYTES input bytes first
+</DD><DT><B>-N</B>, <B>--read-bytes</B>=<I>BYTES</I></DT><DD>
+limit dump to BYTES input bytes
+</DD><DT><B>-S</B> BYTES, <B>--strings</B>[=<I>BYTES</I>]</DT><DD>
+output strings of at least BYTES graphic chars;
+3 is implied when BYTES is not specified
+</DD><DT><B>-t</B>, <B>--format</B>=<I>TYPE</I></DT><DD>
+select output format or formats
+</DD><DT><B>-v</B>, <B>--output-duplicates</B></DT><DD>
+do not use * to mark line suppression
+</DD><DT><B>-w[BYTES]</B>, <B>--width</B>[=<I>BYTES</I>]</DT><DD>
+output BYTES bytes per output line;
+32 is implied when BYTES is not specified
+</DD><DT><B>--traditional</B></DT><DD>
+accept arguments in third form above
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<h3>Traditional format specifications may be intermixed; they accumulate:</h3>
+
+<DL COMPACT>
+<DT><B>-a</B></DT><DD>
+same as <B>-t</B> a,  select named characters, ignoring high-order bit
+</DD><DT><B>-b</B></DT><DD>
+same as <B>-t</B> o1, select octal bytes
+</DD><DT><B>-c</B></DT><DD>
+same as <B>-t</B> c,  select printable characters or backslash escapes
+</DD><DT><B>-d</B></DT><DD>
+same as <B>-t</B> u2, select unsigned decimal 2-byte units
+</DD><DT><B>-f</B></DT><DD>
+same as <B>-t</B> fF, select floats
+</DD><DT><B>-i</B></DT><DD>
+same as <B>-t</B> dI, select decimal ints
+</DD><DT><B>-l</B></DT><DD>
+same as <B>-t</B> dL, select decimal longs
+</DD><DT><B>-o</B></DT><DD>
+same as <B>-t</B> o2, select octal 2-byte units
+</DD><DT><B>-s</B></DT><DD>
+same as <B>-t</B> d2, select decimal 2-byte units
+</DD><DT><B>-x</B></DT><DD>
+same as <B>-t</B> x2, select hexadecimal 2-byte units
+</DD></DL>
+<h3>TYPE is made up of one or more of these specifications:</h3>
+
+<DL COMPACT>
+<DT>a</DT><DD>
+named character, ignoring high-order bit
+</DD><DT>c</DT><DD>
+printable character or backslash escape
+</DD><DT>d[SIZE]</DT><DD>
+signed decimal, SIZE bytes per integer
+</DD><DT>f[SIZE]</DT><DD>
+floating point, SIZE bytes per integer
+</DD><DT>o[SIZE]</DT><DD>
+octal, SIZE bytes per integer
+</DD><DT>u[SIZE]</DT><DD>
+unsigned decimal, SIZE bytes per integer
+</DD><DT>x[SIZE]</DT><DD>
+hexadecimal, SIZE bytes per integer
+</DD></DL>
+<p>
+
+SIZE is a number.  For TYPE in [doux], SIZE may also be C for
+sizeof(char), S for sizeof(short), I for sizeof(int) or L for
+sizeof(long).  If TYPE is f, SIZE may also be F for sizeof(float), D
+for sizeof(double) or L for sizeof(long double).
+<p>
+
+Adding a z suffix to any type displays printable characters at the end of
+each output line.
+<h3>BYTES is hex with 0x or 0X prefix, and may have a multiplier suffix:</h3>
+
+<DL COMPACT>
+<DT>b</DT><DD>
+512
+</DD><DT>KB</DT><DD>
+1000
+</DD><DT>K</DT><DD>
+1024
+</DD><DT>MB</DT><DD>
+1000*1000
+</DD><DT>M</DT><DD>
+1024*1024
+</DD></DL>
+<p>
+
+and so on for G, T, P, E, Z, Y.
+</div>
+<h2>EXAMPLES</h2>
+<div class="content">
+
+<DL COMPACT>
+<DT><B>od -A x -t x1z -v</B>
+
+</DT><DD>
+Display hexdump format output
+</DD><DT><B>od -A o -t oS -w16</B>
+
+</DT><DD>
+The default output format used by od
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report od translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/od">http://www.gnu.org/software/coreutils/od</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) od invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

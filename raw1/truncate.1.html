@@ -1,0 +1,105 @@
+<html><head><title>Manpage of TRUNCATE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+truncate - shrink or extend the size of a file to the specified size
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>truncate</B>
+
+<I>OPTION</I>... <I>FILE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Shrink or extend the size of each FILE to the specified size
+<p>
+
+A FILE argument that does not exist is created.
+<p>
+
+If a FILE is larger than the specified size, the extra data is lost.
+If a FILE is shorter, it is extended and the extended part (hole)
+reads as zero bytes.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-c</B>, <B>--no-create</B></DT><DD>
+do not create any files
+</DD><DT><B>-o</B>, <B>--io-blocks</B></DT><DD>
+treat SIZE as number of IO blocks instead of bytes
+</DD><DT><B>-r</B>, <B>--reference</B>=<I>RFILE</I></DT><DD>
+base size on RFILE
+</DD><DT><B>-s</B>, <B>--size</B>=<I>SIZE</I></DT><DD>
+set or adjust the file size by SIZE bytes
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+<p>
+
+SIZE may also be prefixed by one of the following modifying characters:
+'+' extend by, '-' reduce by, '&lt;' at most, '&gt;' at least,
+'/' round down to multiple of, '%' round up to multiple of.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Padraig Brady.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report truncate translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man1/dd.1.html">dd</a>(1), <a href="../man2/truncate.2.html">truncate</a>(2), <a href="../man2/ftruncate.2.html">ftruncate</a>(2)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/truncate">http://www.gnu.org/software/coreutils/truncate</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) truncate invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

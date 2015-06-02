@@ -1,0 +1,116 @@
+<html><head><title>Manpage of UNIQ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+uniq - report or omit repeated lines
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>uniq</B>
+
+[<I>OPTION</I>]... [<I>INPUT </I>[<I>OUTPUT</I>]]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Filter adjacent matching lines from INPUT (or standard input),
+writing to OUTPUT (or standard output).
+<p>
+
+With no options, matching lines are merged to the first occurrence.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-c</B>, <B>--count</B></DT><DD>
+prefix lines by the number of occurrences
+</DD><DT><B>-d</B>, <B>--repeated</B></DT><DD>
+only print duplicate lines, one for each group
+</DD><DT><B>-D</B>, <B>--all-repeated</B>[=<I>METHOD</I>]</DT><DD>
+print all duplicate lines
+groups can be delimited with an empty line
+METHOD={none(default),prepend,separate}
+</DD><DT><B>-f</B>, <B>--skip-fields</B>=<I>N</I></DT><DD>
+avoid comparing the first N fields
+</DD><DT><B>--group</B>[=<I>METHOD</I>]</DT><DD>
+show all items, separating groups with an empty line
+METHOD={separate(default),prepend,append,both}
+</DD><DT><B>-i</B>, <B>--ignore-case</B></DT><DD>
+ignore differences in case when comparing
+</DD><DT><B>-s</B>, <B>--skip-chars</B>=<I>N</I></DT><DD>
+avoid comparing the first N characters
+</DD><DT><B>-u</B>, <B>--unique</B></DT><DD>
+only print unique lines
+</DD><DT><B>-z</B>, <B>--zero-terminated</B></DT><DD>
+line delimiter is NUL, not newline
+</DD><DT><B>-w</B>, <B>--check-chars</B>=<I>N</I></DT><DD>
+compare no more than N characters in lines
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+A field is a run of blanks (usually spaces and/or TABs), then non-blank
+characters.  Fields are skipped before chars.
+<p>
+
+Note: 'uniq' does not detect repeated lines unless they are adjacent.
+You may want to sort the input first, or use 'sort <B>-u</B>' without 'uniq'.
+Also, comparisons honor the rules specified by 'LC_COLLATE'.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Richard M. Stallman and David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report uniq translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man1/comm.1.html">comm</a>(1), <a href="../man1/join.1.html">join</a>(1), <a href="../man1/sort.1.html">sort</a>(1)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/uniq">http://www.gnu.org/software/coreutils/uniq</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) uniq invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

@@ -1,0 +1,360 @@
+<html><head><title>Manpage of STTY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+stty - change and print terminal line settings
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>stty</B>
+
+[<I>-F DEVICE | --file=DEVICE</I>] [<I>SETTING</I>]...
+<br />
+
+<B>stty</B>
+
+[<I>-F DEVICE | --file=DEVICE</I>] [<I>-a|--all</I>]
+<br />
+
+<B>stty</B>
+
+[<I>-F DEVICE | --file=DEVICE</I>] [<I>-g|--save</I>]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Print or change terminal characteristics.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-a</B>, <B>--all</B></DT><DD>
+print all current settings in human-readable form
+</DD><DT><B>-g</B>, <B>--save</B></DT><DD>
+print all current settings in a stty-readable form
+</DD><DT><B>-F</B>, <B>--file</B>=<I>DEVICE</I></DT><DD>
+open and use the specified DEVICE instead of stdin
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Optional - before SETTING indicates negation.  An * marks non-POSIX
+settings.  The underlying system defines which settings are available.
+<h3>Special characters:</h3>
+
+<DL COMPACT>
+<DT>* dsusp CHAR</DT><DD>
+CHAR will send a terminal stop signal once input flushed
+</DD><DT>eof CHAR</DT><DD>
+CHAR will send an end of file (terminate the input)
+</DD><DT>eol CHAR</DT><DD>
+CHAR will end the line
+</DD><DT>* eol2 CHAR</DT><DD>
+alternate CHAR for ending the line
+</DD><DT>erase CHAR</DT><DD>
+CHAR will erase the last character typed
+</DD><DT>intr CHAR</DT><DD>
+CHAR will send an interrupt signal
+</DD><DT>kill CHAR</DT><DD>
+CHAR will erase the current line
+</DD><DT>* lnext CHAR</DT><DD>
+CHAR will enter the next character quoted
+</DD><DT>quit CHAR</DT><DD>
+CHAR will send a quit signal
+</DD><DT>* rprnt CHAR</DT><DD>
+CHAR will redraw the current line
+</DD><DT>start CHAR</DT><DD>
+CHAR will restart the output after stopping it
+</DD><DT>stop CHAR</DT><DD>
+CHAR will stop the output
+</DD><DT>susp CHAR</DT><DD>
+CHAR will send a terminal stop signal
+</DD><DT>* swtch CHAR</DT><DD>
+CHAR will switch to a different shell layer
+</DD><DT>* werase CHAR</DT><DD>
+CHAR will erase the last word typed
+</DD></DL>
+<h3>Special settings:</h3>
+
+<DL COMPACT>
+<DT>N</DT><DD>
+set the input and output speeds to N bauds
+</DD><DT>* cols N</DT><DD>
+tell the kernel that the terminal has N columns
+</DD><DT>* columns N</DT><DD>
+same as cols N
+</DD><DT>ispeed N</DT><DD>
+set the input speed to N
+</DD><DT>* line N</DT><DD>
+use line discipline N
+</DD><DT>min N</DT><DD>
+with <B>-icanon</B>, set N characters minimum for a completed read
+</DD><DT>ospeed N</DT><DD>
+set the output speed to N
+</DD><DT>* rows N</DT><DD>
+tell the kernel that the terminal has N rows
+</DD><DT>* size</DT><DD>
+print the number of rows and columns according to the kernel
+</DD><DT>speed</DT><DD>
+print the terminal speed
+</DD><DT>time N</DT><DD>
+with <B>-icanon</B>, set read timeout of N tenths of a second
+</DD></DL>
+<h3>Control settings:</h3>
+
+<DL COMPACT>
+<DT>[-]clocal</DT><DD>
+disable modem control signals
+</DD><DT>[-]cread</DT><DD>
+allow input to be received
+</DD><DT>* [-]crtscts</DT><DD>
+enable RTS/CTS handshaking
+</DD><DT>* [-]cdtrdsr</DT><DD>
+enable DTR/DSR handshaking
+</DD><DT>csN</DT><DD>
+set character size to N bits, N in [5..8]
+</DD><DT>[-]cstopb</DT><DD>
+use two stop bits per character (one with '-')
+</DD><DT>[-]hup</DT><DD>
+send a hangup signal when the last process closes the tty
+</DD><DT>[-]hupcl</DT><DD>
+same as [-]hup
+</DD><DT>[-]parenb</DT><DD>
+generate parity bit in output and expect parity bit in input
+</DD><DT>[-]parodd</DT><DD>
+set odd parity (or even parity with '-')
+</DD><DT>* [-]cmspar</DT><DD>
+use &quot;stick&quot; (mark/space) parity
+</DD></DL>
+<h3>Input settings:</h3>
+
+<DL COMPACT>
+<DT>[-]brkint</DT><DD>
+breaks cause an interrupt signal
+</DD><DT>[-]icrnl</DT><DD>
+translate carriage return to newline
+</DD><DT>[-]ignbrk</DT><DD>
+ignore break characters
+</DD><DT>[-]igncr</DT><DD>
+ignore carriage return
+</DD><DT>[-]ignpar</DT><DD>
+ignore characters with parity errors
+</DD><DT>* [-]imaxbel</DT><DD>
+beep and do not flush a full input buffer on a character
+</DD><DT>[-]inlcr</DT><DD>
+translate newline to carriage return
+</DD><DT>[-]inpck</DT><DD>
+enable input parity checking
+</DD><DT>[-]istrip</DT><DD>
+clear high (8th) bit of input characters
+</DD><DT>* [-]iutf8</DT><DD>
+assume input characters are UTF-8 encoded
+</DD><DT>* [-]iuclc</DT><DD>
+translate uppercase characters to lowercase
+</DD><DT>* [-]ixany</DT><DD>
+let any character restart output, not only start character
+</DD><DT>[-]ixoff</DT><DD>
+enable sending of start/stop characters
+</DD><DT>[-]ixon</DT><DD>
+enable XON/XOFF flow control
+</DD><DT>[-]parmrk</DT><DD>
+mark parity errors (with a 255-0-character sequence)
+</DD><DT>[-]tandem</DT><DD>
+same as [-]ixoff
+</DD></DL>
+<h3>Output settings:</h3>
+
+<DL COMPACT>
+<DT>* bsN</DT><DD>
+backspace delay style, N in [0..1]
+</DD><DT>* crN</DT><DD>
+carriage return delay style, N in [0..3]
+</DD><DT>* ffN</DT><DD>
+form feed delay style, N in [0..1]
+</DD><DT>* nlN</DT><DD>
+newline delay style, N in [0..1]
+</DD><DT>* [-]ocrnl</DT><DD>
+translate carriage return to newline
+</DD><DT>* [-]ofdel</DT><DD>
+use delete characters for fill instead of NUL characters
+</DD><DT>* [-]ofill</DT><DD>
+use fill (padding) characters instead of timing for delays
+</DD><DT>* [-]olcuc</DT><DD>
+translate lowercase characters to uppercase
+</DD><DT>* [-]onlcr</DT><DD>
+translate newline to carriage return-newline
+</DD><DT>* [-]onlret</DT><DD>
+newline performs a carriage return
+</DD><DT>* [-]onocr</DT><DD>
+do not print carriage returns in the first column
+</DD><DT>[-]opost</DT><DD>
+postprocess output
+</DD><DT>* tabN</DT><DD>
+horizontal tab delay style, N in [0..3]
+</DD><DT>* tabs</DT><DD>
+same as tab0
+</DD><DT>* <B>-tabs</B></DT><DD>
+same as tab3
+</DD><DT>* vtN</DT><DD>
+vertical tab delay style, N in [0..1]
+</DD></DL>
+<h3>Local settings:</h3>
+
+<DL COMPACT>
+<DT>[-]crterase</DT><DD>
+echo erase characters as backspace-space-backspace
+</DD><DT>* crtkill</DT><DD>
+kill all line by obeying the echoprt and echoe settings
+</DD><DT>* <B>-crtkill</B></DT><DD>
+kill all line by obeying the echoctl and echok settings
+</DD><DT>* [-]ctlecho</DT><DD>
+echo control characters in hat notation ('^c')
+</DD><DT>[-]echo</DT><DD>
+echo input characters
+</DD><DT>* [-]echoctl</DT><DD>
+same as [-]ctlecho
+</DD><DT>[-]echoe</DT><DD>
+same as [-]crterase
+</DD><DT>[-]echok</DT><DD>
+echo a newline after a kill character
+</DD><DT>* [-]echoke</DT><DD>
+same as [-]crtkill
+</DD><DT>[-]echonl</DT><DD>
+echo newline even if not echoing other characters
+</DD><DT>* [-]echoprt</DT><DD>
+echo erased characters backward, between '\' and '/'
+</DD><DT>[-]icanon</DT><DD>
+enable erase, kill, werase, and rprnt special characters
+</DD><DT>[-]iexten</DT><DD>
+enable non-POSIX special characters
+</DD><DT>[-]isig</DT><DD>
+enable interrupt, quit, and suspend special characters
+</DD><DT>[-]noflsh</DT><DD>
+disable flushing after interrupt and quit special characters
+</DD><DT>* [-]prterase</DT><DD>
+same as [-]echoprt
+</DD><DT>* [-]tostop</DT><DD>
+stop background jobs that try to write to the terminal
+</DD><DT>* [-]xcase</DT><DD>
+with icanon, escape with '\' for uppercase characters
+</DD></DL>
+<h3>Combination settings:</h3>
+
+<DL COMPACT>
+<DT>* [-]LCASE</DT><DD>
+same as [-]lcase
+</DD><DT>cbreak</DT><DD>
+same as <B>-icanon</B>
+</DD><DT><B>-cbreak</B></DT><DD>
+same as icanon
+</DD><DT>cooked</DT><DD>
+same as brkint ignpar istrip icrnl ixon opost isig
+icanon, eof and eol characters to their default values
+</DD><DT><B>-cooked</B></DT><DD>
+same as raw
+</DD><DT>crt</DT><DD>
+same as echoe echoctl echoke
+</DD><DT>dec</DT><DD>
+same as echoe echoctl echoke <B>-ixany</B> intr ^c erase 0177
+kill ^u
+</DD><DT>* [-]decctlq</DT><DD>
+same as [-]ixany
+</DD><DT>ek</DT><DD>
+erase and kill characters to their default values
+</DD><DT>evenp</DT><DD>
+same as parenb <B>-parodd</B> cs7
+</DD><DT><B>-evenp</B></DT><DD>
+same as <B>-parenb</B> cs8
+</DD><DT>* [-]lcase</DT><DD>
+same as xcase iuclc olcuc
+</DD><DT>litout</DT><DD>
+same as <B>-parenb</B> <B>-istrip</B> <B>-opost</B> cs8
+</DD><DT><B>-litout</B></DT><DD>
+same as parenb istrip opost cs7
+</DD><DT>nl</DT><DD>
+same as <B>-icrnl</B> <B>-onlcr</B>
+</DD><DT><B>-nl</B></DT><DD>
+same as icrnl <B>-inlcr</B> <B>-igncr</B> onlcr <B>-ocrnl</B> <B>-onlret</B>
+</DD><DT>oddp</DT><DD>
+same as parenb parodd cs7
+</DD><DT><B>-oddp</B></DT><DD>
+same as <B>-parenb</B> cs8
+</DD><DT>[-]parity</DT><DD>
+same as [-]evenp
+</DD><DT>pass8</DT><DD>
+same as <B>-parenb</B> <B>-istrip</B> cs8
+</DD><DT><B>-pass8</B></DT><DD>
+same as parenb istrip cs7
+</DD><DT>raw</DT><DD>
+same as <B>-ignbrk</B> <B>-brkint</B> <B>-ignpar</B> <B>-parmrk</B> <B>-inpck</B> <B>-istrip</B>
+<B>-inlcr</B> <B>-igncr</B> <B>-icrnl</B>  <B>-ixon</B>  <B>-ixoff</B>  <B>-iuclc</B>  <B>-ixany</B>
+<B>-imaxbel</B> <B>-opost</B> <B>-isig</B> <B>-icanon</B> <B>-xcase</B> min 1 time 0
+</DD><DT><B>-raw</B></DT><DD>
+same as cooked
+</DD><DT>sane</DT><DD>
+same as cread <B>-ignbrk</B> brkint <B>-inlcr</B> <B>-igncr</B> icrnl <B>-iutf8</B>
+<B>-ixoff</B> <B>-iuclc</B> <B>-ixany</B> imaxbel opost <B>-olcuc</B> <B>-ocrnl</B> onlcr
+<B>-onocr</B> <B>-onlret</B> <B>-ofill</B> <B>-ofdel</B> nl0 cr0 tab0 bs0 vt0 ff0
+isig icanon iexten echo echoe echok <B>-echonl</B> <B>-noflsh</B>
+<B>-xcase</B> <B>-tostop</B> <B>-echoprt</B> echoctl echoke, all special
+characters to their default values
+</DD></DL>
+<p>
+
+Handle the tty line connected to standard input.  Without arguments,
+prints baud rate, line discipline, and deviations from stty sane.  In
+settings, CHAR is taken literally, or coded as in ^c, 0x37, 0177 or
+127; special values ^- or undef used to disable special characters.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report stty translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/stty">http://www.gnu.org/software/coreutils/stty</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) stty invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

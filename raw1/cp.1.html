@@ -1,0 +1,192 @@
+<html><head><title>Manpage of CP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+cp - copy files and directories
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>cp</B>
+
+[<I>OPTION</I>]... [<I>-T</I>] <I>SOURCE DEST</I>
+<br />
+
+<B>cp</B>
+
+[<I>OPTION</I>]... <I>SOURCE</I>... <I>DIRECTORY</I>
+<br />
+
+<B>cp</B>
+
+[<I>OPTION</I>]... <I>-t DIRECTORY SOURCE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-a</B>, <B>--archive</B></DT><DD>
+same as <B>-dR</B> <B>--preserve</B>=<I>all</I>
+</DD><DT><B>--attributes-only</B></DT><DD>
+don't copy the file data, just the attributes
+</DD><DT><B>--backup</B>[=<I>CONTROL</I>]</DT><DD>
+make a backup of each existing destination file
+</DD><DT><B>-b</B></DT><DD>
+like <B>--backup</B> but does not accept an argument
+</DD><DT><B>--copy-contents</B></DT><DD>
+copy contents of special files when recursive
+</DD><DT><B>-d</B></DT><DD>
+same as <B>--no-dereference</B> <B>--preserve</B>=<I>links</I>
+</DD><DT><B>-f</B>, <B>--force</B></DT><DD>
+if an existing destination file cannot be
+opened, remove it and try again (this option
+is ignored when the <B>-n</B> option is also used)
+</DD><DT><B>-i</B>, <B>--interactive</B></DT><DD>
+prompt before overwrite (overrides a previous <B>-n</B>
+option)
+</DD><DT><B>-H</B></DT><DD>
+follow command-line symbolic links in SOURCE
+</DD><DT><B>-l</B>, <B>--link</B></DT><DD>
+hard link files instead of copying
+</DD><DT><B>-L</B>, <B>--dereference</B></DT><DD>
+always follow symbolic links in SOURCE
+</DD><DT><B>-n</B>, <B>--no-clobber</B></DT><DD>
+do not overwrite an existing file (overrides
+a previous <B>-i</B> option)
+</DD><DT><B>-P</B>, <B>--no-dereference</B></DT><DD>
+never follow symbolic links in SOURCE
+</DD><DT><B>-p</B></DT><DD>
+same as <B>--preserve</B>=<I>mode</I>,ownership,timestamps
+</DD><DT><B>--preserve</B>[=<I>ATTR_LIST</I>]</DT><DD>
+preserve the specified attributes (default:
+mode,ownership,timestamps), if possible
+additional attributes: context, links, xattr,
+all
+</DD><DT><B>--no-preserve</B>=<I>ATTR_LIST</I></DT><DD>
+don't preserve the specified attributes
+</DD><DT><B>--parents</B></DT><DD>
+use full source file name under DIRECTORY
+</DD><DT><B>-R</B>, <B>-r</B>, <B>--recursive</B></DT><DD>
+copy directories recursively
+</DD><DT><B>--reflink</B>[=<I>WHEN</I>]</DT><DD>
+control clone/CoW copies. See below
+</DD><DT><B>--remove-destination</B></DT><DD>
+remove each existing destination file before
+attempting to open it (contrast with <B>--force</B>)
+</DD><DT><B>--sparse</B>=<I>WHEN</I></DT><DD>
+control creation of sparse files. See below
+</DD><DT><B>--strip-trailing-slashes</B></DT><DD>
+remove any trailing slashes from each SOURCE
+argument
+</DD><DT><B>-s</B>, <B>--symbolic-link</B></DT><DD>
+make symbolic links instead of copying
+</DD><DT><B>-S</B>, <B>--suffix</B>=<I>SUFFIX</I></DT><DD>
+override the usual backup suffix
+</DD><DT><B>-t</B>, <B>--target-directory</B>=<I>DIRECTORY</I></DT><DD>
+copy all SOURCE arguments into DIRECTORY
+</DD><DT><B>-T</B>, <B>--no-target-directory</B></DT><DD>
+treat DEST as a normal file
+</DD><DT><B>-u</B>, <B>--update</B></DT><DD>
+copy only when the SOURCE file is newer
+than the destination file or when the
+destination file is missing
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+explain what is being done
+</DD><DT><B>-x</B>, <B>--one-file-system</B></DT><DD>
+stay on this file system
+</DD><DT><B>-Z</B></DT><DD>
+set SELinux security context of destination
+file to default type
+</DD><DT><B>--context</B>[=<I>CTX</I>]</DT><DD>
+like <B>-Z</B>, or if CTX is specified then set the
+SELinux or SMACK security context to CTX
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by <B>--sparse</B>=<I>auto</I>.  Specify <B>--sparse</B>=<I>always</I> to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use <B>--sparse</B>=<I>never</I> to inhibit creation of sparse files.
+<p>
+
+When <B>--reflink</B>[=<I>always</I>] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if <B>--reflink</B>=<I>auto</I> is specified, fall back to a standard copy.
+<p>
+
+The backup suffix is '~', unless set with <B>--suffix</B> or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the <B>--backup</B> option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+<DL COMPACT>
+<DT>none, off</DT><DD>
+never make backups (even if <B>--backup</B> is given)
+</DD><DT>numbered, t</DT><DD>
+make numbered backups
+</DD><DT>existing, nil</DT><DD>
+numbered if numbered backups exist, simple otherwise
+</DD><DT>simple, never</DT><DD>
+always make simple backups
+</DD></DL>
+<p>
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Torbjorn Granlund, David MacKenzie, and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report cp translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/cp">http://www.gnu.org/software/coreutils/cp</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) cp invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

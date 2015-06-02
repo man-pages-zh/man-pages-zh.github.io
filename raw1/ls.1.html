@@ -1,0 +1,241 @@
+<html><head><title>Manpage of LS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+ls - list directory contents
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>ls</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of <B>-cftuvSUX</B> nor <B>--sort</B> is specified.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-a</B>, <B>--all</B></DT><DD>
+do not ignore entries starting with .
+</DD><DT><B>-A</B>, <B>--almost-all</B></DT><DD>
+do not list implied . and ..
+</DD><DT><B>--author</B></DT><DD>
+with <B>-l</B>, print the author of each file
+</DD><DT><B>-b</B>, <B>--escape</B></DT><DD>
+print C-style escapes for nongraphic characters
+</DD><DT><B>--block-size</B>=<I>SIZE</I></DT><DD>
+scale sizes by SIZE before printing them; e.g.,
+'--block-size=M' prints sizes in units of
+1,048,576 bytes; see SIZE format below
+</DD><DT><B>-B</B>, <B>--ignore-backups</B></DT><DD>
+do not list implied entries ending with ~
+</DD><DT><B>-c</B></DT><DD>
+with <B>-lt</B>: sort by, and show, ctime (time of last
+modification of file status information);
+with <B>-l</B>: show ctime and sort by name;
+otherwise: sort by ctime, newest first
+</DD><DT><B>-C</B></DT><DD>
+list entries by columns
+</DD><DT><B>--color</B>[=<I>WHEN</I>]</DT><DD>
+colorize the output; WHEN can be 'never', 'auto',
+or 'always' (the default); more info below
+</DD><DT><B>-d</B>, <B>--directory</B></DT><DD>
+list directories themselves, not their contents
+</DD><DT><B>-D</B>, <B>--dired</B></DT><DD>
+generate output designed for Emacs' dired mode
+</DD><DT><B>-f</B></DT><DD>
+do not sort, enable <B>-aU</B>, disable <B>-ls</B> <B>--color</B>
+</DD><DT><B>-F</B>, <B>--classify</B></DT><DD>
+append indicator (one of */=&gt;@|) to entries
+</DD><DT><B>--file-type</B></DT><DD>
+likewise, except do not append '*'
+</DD><DT><B>--format</B>=<I>WORD</I></DT><DD>
+across <B>-x</B>, commas <B>-m</B>, horizontal <B>-x</B>, long <B>-l</B>,
+single-column <B>-1</B>, verbose <B>-l</B>, vertical <B>-C</B>
+</DD><DT><B>--full-time</B></DT><DD>
+like <B>-l</B> <B>--time-style</B>=<I>full-iso</I>
+</DD><DT><B>-g</B></DT><DD>
+like <B>-l</B>, but do not list owner
+</DD><DT><B>--group-directories-first</B></DT><DD>
+group directories before files;
+</DD><DT></DT><DD>
+can be augmented with a <B>--sort</B> option, but any
+use of <B>--sort</B>=<I>none</I> (<B>-U</B>) disables grouping
+</DD><DT><B>-G</B>, <B>--no-group</B></DT><DD>
+in a long listing, don't print group names
+</DD><DT><B>-h</B>, <B>--human-readable</B></DT><DD>
+with <B>-l</B> and/or <B>-s</B>, print human readable sizes
+(e.g., 1K 234M 2G)
+</DD><DT><B>--si</B></DT><DD>
+likewise, but use powers of 1000 not 1024
+</DD><DT><B>-H</B>, <B>--dereference-command-line</B></DT><DD>
+follow symbolic links listed on the command line
+</DD><DT><B>--dereference-command-line-symlink-to-dir</B></DT><DD>
+follow each command line symbolic link
+</DD><DT></DT><DD>
+that points to a directory
+</DD><DT><B>--hide</B>=<I>PATTERN</I></DT><DD>
+do not list implied entries matching shell PATTERN
+(overridden by <B>-a</B> or <B>-A</B>)
+</DD><DT><B>--indicator-style</B>=<I>WORD</I></DT><DD>
+append indicator with style WORD to entry names:
+none (default), slash (<B>-p</B>),
+file-type (<B>--file-type</B>), classify (<B>-F</B>)
+</DD><DT><B>-i</B>, <B>--inode</B></DT><DD>
+print the index number of each file
+</DD><DT><B>-I</B>, <B>--ignore</B>=<I>PATTERN</I></DT><DD>
+do not list implied entries matching shell PATTERN
+</DD><DT><B>-k</B>, <B>--kibibytes</B></DT><DD>
+default to 1024-byte blocks for disk usage
+</DD><DT><B>-l</B></DT><DD>
+use a long listing format
+</DD><DT><B>-L</B>, <B>--dereference</B></DT><DD>
+when showing file information for a symbolic
+link, show information for the file the link
+references rather than for the link itself
+</DD><DT><B>-m</B></DT><DD>
+fill width with a comma separated list of entries
+</DD><DT><B>-n</B>, <B>--numeric-uid-gid</B></DT><DD>
+like <B>-l</B>, but list numeric user and group IDs
+</DD><DT><B>-N</B>, <B>--literal</B></DT><DD>
+print raw entry names (don't treat e.g. control
+characters specially)
+</DD><DT><B>-o</B></DT><DD>
+like <B>-l</B>, but do not list group information
+</DD><DT><B>-p</B>, <B>--indicator-style</B>=<I>slash</I></DT><DD>
+append / indicator to directories
+</DD><DT><B>-q</B>, <B>--hide-control-chars</B></DT><DD>
+print ? instead of nongraphic characters
+</DD><DT><B>--show-control-chars</B></DT><DD>
+show nongraphic characters as-is (the default,
+unless program is 'ls' and output is a terminal)
+</DD><DT><B>-Q</B>, <B>--quote-name</B></DT><DD>
+enclose entry names in double quotes
+</DD><DT><B>--quoting-style</B>=<I>WORD</I></DT><DD>
+use quoting style WORD for entry names:
+literal, locale, shell, shell-always, c, escape
+</DD><DT><B>-r</B>, <B>--reverse</B></DT><DD>
+reverse order while sorting
+</DD><DT><B>-R</B>, <B>--recursive</B></DT><DD>
+list subdirectories recursively
+</DD><DT><B>-s</B>, <B>--size</B></DT><DD>
+print the allocated size of each file, in blocks
+</DD><DT><B>-S</B></DT><DD>
+sort by file size
+</DD><DT><B>--sort</B>=<I>WORD</I></DT><DD>
+sort by WORD instead of name: none (<B>-U</B>), size (<B>-S</B>),
+time (<B>-t</B>), version (<B>-v</B>), extension (<B>-X</B>)
+</DD><DT><B>--time</B>=<I>WORD</I></DT><DD>
+with <B>-l</B>, show time as WORD instead of default
+modification time: atime or access or use (<B>-u</B>)
+ctime or status (<B>-c</B>); also use specified time
+as sort key if <B>--sort</B>=<I>time</I>
+</DD><DT><B>--time-style</B>=<I>STYLE</I></DT><DD>
+with <B>-l</B>, show times using style STYLE:
+full-iso, long-iso, iso, locale, or +FORMAT;
+FORMAT is interpreted like in 'date'; if FORMAT
+is FORMAT1&lt;newline&gt;FORMAT2, then FORMAT1 applies
+to non-recent files and FORMAT2 to recent files;
+if STYLE is prefixed with 'posix-', STYLE
+takes effect only outside the POSIX locale
+</DD><DT><B>-t</B></DT><DD>
+sort by modification time, newest first
+</DD><DT><B>-T</B>, <B>--tabsize</B>=<I>COLS</I></DT><DD>
+assume tab stops at each COLS instead of 8
+</DD><DT><B>-u</B></DT><DD>
+with <B>-lt</B>: sort by, and show, access time;
+with <B>-l</B>: show access time and sort by name;
+otherwise: sort by access time
+</DD><DT><B>-U</B></DT><DD>
+do not sort; list entries in directory order
+</DD><DT><B>-v</B></DT><DD>
+natural sort of (version) numbers within text
+</DD><DT><B>-w</B>, <B>--width</B>=<I>COLS</I></DT><DD>
+assume screen width instead of current value
+</DD><DT><B>-x</B></DT><DD>
+list entries by lines instead of by columns
+</DD><DT><B>-X</B></DT><DD>
+sort alphabetically by entry extension
+</DD><DT><B>-Z</B>, <B>--context</B></DT><DD>
+print any security context of each file
+</DD><DT><B>-1</B></DT><DD>
+list one file per line
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+<p>
+
+Using color to distinguish file types is disabled both by default and
+with <B>--color</B>=<I>never</I>.  With <B>--color</B>=<I>auto</I>, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+<h3>Exit status:</h3>
+
+<DL COMPACT>
+<DT>0</DT><DD>
+if OK,
+</DD><DT>1</DT><DD>
+if minor problems (e.g., cannot access subdirectory),
+</DD><DT>2</DT><DD>
+if serious trouble (e.g., cannot access command-line argument).
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Richard M. Stallman and David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report ls translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/ls">http://www.gnu.org/software/coreutils/ls</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) ls invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

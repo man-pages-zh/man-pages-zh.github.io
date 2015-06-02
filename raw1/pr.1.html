@@ -1,0 +1,148 @@
+<html><head><title>Manpage of PR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+pr - convert text files for printing
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>pr</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Paginate or columnate FILE(s) for printing.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT>+FIRST_PAGE[:LAST_PAGE], <B>--pages</B>=<I>FIRST_PAGE[</I>:LAST_PAGE]</DT><DD>
+begin [stop] printing with page FIRST_[LAST_]PAGE
+</DD><DT><B>-COLUMN</B>, <B>--columns</B>=<I>COLUMN</I></DT><DD>
+output COLUMN columns and print columns down,
+unless <B>-a</B> is used. Balance number of lines in the
+columns on each page
+</DD><DT><B>-a</B>, <B>--across</B></DT><DD>
+print columns across rather than down, used together
+with <B>-COLUMN</B>
+</DD><DT><B>-c</B>, <B>--show-control-chars</B></DT><DD>
+use hat notation (^G) and octal backslash notation
+</DD><DT><B>-d</B>, <B>--double-space</B></DT><DD>
+double space the output
+</DD><DT><B>-D</B>, <B>--date-format</B>=<I>FORMAT</I></DT><DD>
+use FORMAT for the header date
+</DD><DT><B>-e[CHAR[WIDTH]]</B>, <B>--expand-tabs</B>[=<I>CHAR[WIDTH]</I>]</DT><DD>
+expand input CHARs (TABs) to tab WIDTH (8)
+</DD><DT><B>-F</B>, <B>-f</B>, <B>--form-feed</B></DT><DD>
+use form feeds instead of newlines to separate pages
+(by a 3-line page header with <B>-F</B> or a 5-line header
+and trailer without <B>-F</B>)
+</DD><DT><B>-h</B>, <B>--header</B>=<I>HEADER</I></DT><DD>
+use a centered HEADER instead of filename in page header,
+<B>-h</B> &quot;&quot; prints a blank line, don't use <B>-h</B>&quot;&quot;
+</DD><DT><B>-i[CHAR[WIDTH]]</B>, <B>--output-tabs</B>[=<I>CHAR[WIDTH]</I>]</DT><DD>
+replace spaces with CHARs (TABs) to tab WIDTH (8)
+</DD><DT><B>-J</B>, <B>--join-lines</B></DT><DD>
+merge full lines, turns off <B>-W</B> line truncation, no column
+alignment, <B>--sep-string</B>[=<I>STRING</I>] sets separators
+</DD><DT><B>-l</B>, <B>--length</B>=<I>PAGE_LENGTH</I></DT><DD>
+set the page length to PAGE_LENGTH (66) lines
+(default number of lines of text 56, and with <B>-F</B> 63)
+</DD><DT><B>-m</B>, <B>--merge</B></DT><DD>
+print all files in parallel, one in each column,
+truncate lines, but join lines of full length with <B>-J</B>
+</DD><DT><B>-n[SEP[DIGITS]]</B>, <B>--number-lines</B>[=<I>SEP[DIGITS]</I>]</DT><DD>
+number lines, use DIGITS (5) digits, then SEP (TAB),
+default counting starts with 1st line of input file
+</DD><DT><B>-N</B>, <B>--first-line-number</B>=<I>NUMBER</I></DT><DD>
+start counting with NUMBER at 1st line of first
+page printed (see +FIRST_PAGE)
+</DD><DT><B>-o</B>, <B>--indent</B>=<I>MARGIN</I></DT><DD>
+offset each line with MARGIN (zero) spaces, do not
+affect <B>-w</B> or <B>-W</B>, MARGIN will be added to PAGE_WIDTH
+</DD><DT><B>-r</B>, <B>--no-file-warnings</B></DT><DD>
+omit warning when a file cannot be opened
+</DD><DT><B>-s[CHAR]</B>, <B>--separator</B>[=<I>CHAR</I>]</DT><DD>
+separate columns by a single character, default for CHAR
+is the &lt;TAB&gt; character without <B>-w</B> and 'no char' with <B>-w</B>.
+<B>-s[CHAR]</B> turns off line truncation of all 3 column
+options (<B>-COLUMN</B>|-a <B>-COLUMN</B>|-m) except <B>-w</B> is set
+</DD><DT><B>-S[STRING]</B>, <B>--sep-string</B>[=<I>STRING</I>]</DT><DD>
+separate columns by STRING,
+without <B>-S</B>: Default separator &lt;TAB&gt; with <B>-J</B> and &lt;space&gt;
+otherwise (same as <B>-S</B>&quot; &quot;), no effect on column options
+</DD><DT><B>-t</B>, <B>--omit-header</B></DT><DD>
+omit page headers and trailers
+</DD><DT><B>-T</B>, <B>--omit-pagination</B></DT><DD>
+omit page headers and trailers, eliminate any pagination
+by form feeds set in input files
+</DD><DT><B>-v</B>, <B>--show-nonprinting</B></DT><DD>
+use octal backslash notation
+</DD><DT><B>-w</B>, <B>--width</B>=<I>PAGE_WIDTH</I></DT><DD>
+set page width to PAGE_WIDTH (72) characters for
+multiple text-column output only, <B>-s[char]</B> turns off (72)
+</DD><DT><B>-W</B>, <B>--page-width</B>=<I>PAGE_WIDTH</I></DT><DD>
+set page width to PAGE_WIDTH (72) characters always,
+truncate lines, except <B>-J</B> option is set, no interference
+with <B>-S</B> or <B>-s</B>
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+<B>-t</B> is implied if PAGE_LENGTH &lt;= 10.  With no FILE, or when FILE is -, read
+standard input.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Pete TerMaat and Roland Huebner.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report pr translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/pr">http://www.gnu.org/software/coreutils/pr</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) pr invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

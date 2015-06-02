@@ -1,0 +1,237 @@
+<html><head><title>Manpage of CHMOD</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+chmod - change file mode bits
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>chmod</B>
+
+[<I>OPTION</I>]... <I>MODE</I>[<I>,MODE</I>]... <I>FILE</I>...
+<br />
+
+<B>chmod</B>
+
+[<I>OPTION</I>]... <I>OCTAL-MODE FILE</I>...
+<br />
+
+<B>chmod</B>
+
+[<I>OPTION</I>]... <I>--reference=RFILE FILE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+This manual page
+documents the GNU version of
+<B>chmod</B>.
+
+<B>chmod</B>
+
+changes the file mode bits of each given file according to
+<I>mode</I>,
+
+which can be either a symbolic representation of changes to make, or
+an octal number representing the bit pattern for the new mode bits.
+<p>
+
+The format of a symbolic mode is [<B>ugoa</B>...][[<B>-+=</B>][<I>perms</I>...]...],
+where
+<I>perms</I>
+
+is either zero or more letters from the set
+<B>rwxXst</B>, or a single letter from the set <B>ugo</B>.
+Multiple symbolic
+modes can be given, separated by commas.
+<p>
+
+A combination of the letters <B>ugoa</B> controls which users' access
+to the file will be changed: the user who owns it (<B>u</B>), other
+users in the file's group (<B>g</B>), other users not in the file's
+group (<B>o</B>), or all users (<B>a</B>).  If none of these are given,
+the effect is as if (<B>a</B>) were
+given, but bits that are set in the umask are not affected.
+<p>
+
+The operator <B>+</B> causes the selected file mode bits to be added to
+the existing file mode bits of each file; <B>-</B> causes them to be
+removed; and <B>=</B> causes them to be added and causes unmentioned
+bits to be removed except that a directory's unmentioned set user and
+group ID bits are not affected.
+<p>
+
+The letters <B>rwxXst</B> select file mode bits for the affected users:
+read (<B>r</B>), write (<B>w</B>), execute (or search for directories)
+(<B>x</B>), execute/search only if the file is a directory or already
+has execute permission for some user (<B>X</B>), set user or group ID
+on execution (<B>s</B>), restricted deletion flag or sticky bit
+(<B>t</B>).  Instead of one or more of these letters, you can specify
+exactly one of the letters <B>ugo</B>: the permissions granted to the
+user who owns the file (<B>u</B>), the permissions granted to other
+users who are members of the file's group (<B>g</B>),
+and the permissions granted to users that are in neither of the two preceding
+categories (<B>o</B>).
+<p>
+
+A numeric mode is from one to four octal digits (0-7), derived by
+adding up the bits with values 4, 2, and 1.  Omitted digits are
+assumed to be leading zeros.
+The first digit selects the set user ID (4) and set group ID (2) and
+restricted deletion or sticky (1) attributes.  The second digit
+selects permissions for the user who owns the file: read (4), write (2),
+and execute (1); the third selects permissions for other users in the
+file's group, with the same values; and the fourth for other users not
+in the file's group, with the same values.
+<p>
+
+<B>chmod</B>
+
+never changes the permissions of symbolic links; the
+<B>chmod</B>
+
+system call cannot change their permissions.  This is not a problem
+since the permissions of symbolic links are never used.
+However, for each symbolic link listed on the command line,
+<B>chmod</B>
+
+changes the permissions of the pointed-to file.
+In contrast,
+<B>chmod</B>
+
+ignores symbolic links encountered during recursive directory
+traversals.
+</div>
+<h2>SETUID AND SETGID BITS</h2>
+<div class="content">
+
+<B>chmod</B>
+
+clears the set-group-ID bit of a
+regular file if the file's group ID does not match the user's
+effective group ID or one of the user's supplementary group IDs,
+unless the user has appropriate privileges.  Additional restrictions
+may cause the set-user-ID and set-group-ID bits of
+<I>MODE</I>
+
+or
+<I>RFILE</I>
+
+to be ignored.  This behavior depends on the policy and
+functionality of the underlying
+<B>chmod</B>
+
+system call.  When in
+doubt, check the underlying system behavior.
+<p>
+
+<B>chmod</B>
+
+preserves a directory's set-user-ID and set-group-ID bits unless you
+explicitly specify otherwise.  You can set or clear the bits with
+symbolic modes like
+<B>u+s</B>
+
+and
+<B>g-s</B>,
+
+and you can set (but not clear) the bits with a numeric mode.
+</div>
+<h2>RESTRICTED DELETION FLAG OR STICKY BIT</h2>
+<div class="content">
+
+The restricted deletion flag or sticky bit is a single bit, whose
+interpretation depends on the file type.  For directories, it prevents
+unprivileged users from removing or renaming a file in the directory
+unless they own the file or the directory; this is called the
+<I>restricted deletion flag</I>
+
+for the directory, and is commonly found on world-writable directories
+like <B>/tmp</B>.  For regular files on some older systems, the bit
+saves the program's text image on the swap device so it will load more
+quickly when run; this is called the
+<I>sticky bit</I>.
+
+</div>
+<h2>OPTIONS</h2>
+<div class="content">
+
+<p>
+
+Change the mode of each FILE to MODE.
+With <B>--reference</B>, change the mode of each FILE to that of RFILE.
+<DL COMPACT>
+<DT><B>-c</B>, <B>--changes</B></DT><DD>
+like verbose but report only when a change is made
+</DD><DT><B>-f</B>, <B>--silent</B>, <B>--quiet</B></DT><DD>
+suppress most error messages
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+output a diagnostic for every file processed
+</DD><DT><B>--no-preserve-root</B></DT><DD>
+do not treat '/' specially (the default)
+</DD><DT><B>--preserve-root</B></DT><DD>
+fail to operate recursively on '/'
+</DD><DT><B>--reference</B>=<I>RFILE</I></DT><DD>
+use RFILE's mode instead of MODE values
+</DD><DT><B>-R</B>, <B>--recursive</B></DT><DD>
+change files and directories recursively
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by David MacKenzie and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report chmod translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man2/chmod.2.html">chmod</a>(2)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/chmod">http://www.gnu.org/software/coreutils/chmod</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) chmod invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

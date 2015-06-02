@@ -1,0 +1,125 @@
+<html><head><title>Manpage of TAIL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+tail - output the last part of files
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>tail</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Print the last 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+With no FILE, or when FILE is -, read standard input.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-c</B>, <B>--bytes</B>=<I>K</I></DT><DD>
+output the last K bytes; or use <B>-c</B> +K to output
+bytes starting with the Kth of each file
+</DD><DT><B>-f</B>, <B>--follow[=</B>{name|descriptor}]</DT><DD>
+output appended data as the file grows;
+</DD><DT></DT><DD>
+an absent option argument means 'descriptor'
+</DD><DT><B>-F</B></DT><DD>
+same as <B>--follow</B>=<I>name</I> <B>--retry</B>
+</DD><DT><B>-n</B>, <B>--lines</B>=<I>K</I></DT><DD>
+output the last K lines, instead of the last 10;
+or use <B>-n</B> +K to output starting with the Kth
+</DD><DT><B>--max-unchanged-stats</B>=<I>N</I></DT><DD>
+with <B>--follow</B>=<I>name</I>, reopen a FILE which has not
+</DD><DT></DT><DD>
+changed size after N (default 5) iterations
+to see if it has been unlinked or renamed
+(this is the usual case of rotated log files);
+with inotify, this option is rarely useful
+</DD><DT><B>--pid</B>=<I>PID</I></DT><DD>
+with <B>-f</B>, terminate after process ID, PID dies
+</DD><DT><B>-q</B>, <B>--quiet</B>, <B>--silent</B></DT><DD>
+never output headers giving file names
+</DD><DT><B>--retry</B></DT><DD>
+keep trying to open a file if it is inaccessible
+</DD><DT><B>-s</B>, <B>--sleep-interval</B>=<I>N</I></DT><DD>
+with <B>-f</B>, sleep for approximately N seconds
+(default 1.0) between iterations;
+with inotify and <B>--pid</B>=<I>P</I>, check process P at
+least once every N seconds
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+always output headers giving file names
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+If the first character of K (the number of bytes or lines) is a '+',
+print beginning with the Kth item from the start of each file, otherwise,
+print the last K items in the file.  K may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+<p>
+
+With <B>--follow</B> (<B>-f</B>), tail defaults to following the file descriptor, which
+means that even if a tail'ed file is renamed, tail will continue to track
+its end.  This default behavior is not desirable when you really want to
+track the actual name of the file, not the file descriptor (e.g., log
+rotation).  Use <B>--follow</B>=<I>name</I> in that case.  That causes tail to track the
+named file in a way that accommodates renaming, removal and creation.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Paul Rubin, David MacKenzie, Ian Lance Taylor,
+and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report tail translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/tail">http://www.gnu.org/software/coreutils/tail</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) tail invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

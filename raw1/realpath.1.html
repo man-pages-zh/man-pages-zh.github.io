@@ -1,0 +1,96 @@
+<html><head><title>Manpage of REALPATH</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+realpath - print the resolved path
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>realpath</B>
+
+[<I>OPTION</I>]... <I>FILE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Print the resolved absolute file name;
+all but the last component must exist
+<DL COMPACT>
+<DT><B>-e</B>, <B>--canonicalize-existing</B></DT><DD>
+all components of the path must exist
+</DD><DT><B>-m</B>, <B>--canonicalize-missing</B></DT><DD>
+no components of the path need exist
+</DD><DT><B>-L</B>, <B>--logical</B></DT><DD>
+resolve '..' components before symlinks
+</DD><DT><B>-P</B>, <B>--physical</B></DT><DD>
+resolve symlinks as encountered (default)
+</DD><DT><B>-q</B>, <B>--quiet</B></DT><DD>
+suppress most error messages
+</DD><DT><B>--relative-to</B>=<I>FILE</I></DT><DD>
+print the resolved path relative to FILE
+</DD><DT><B>--relative-base</B>=<I>FILE</I></DT><DD>
+print absolute paths unless paths below FILE
+</DD><DT><B>-s</B>, <B>--strip</B>, <B>--no-symlinks</B></DT><DD>
+don't expand symlinks
+</DD><DT><B>-z</B>, <B>--zero</B></DT><DD>
+end each output line with NUL, not newline
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Padraig Brady.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report realpath translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man1/readlink.1.html">readlink</a>(1), <a href="../man2/readlink.2.html">readlink</a>(2), <a href="../man3/realpath.3.html">realpath</a>(3)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/realpath">http://www.gnu.org/software/coreutils/realpath</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) realpath invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

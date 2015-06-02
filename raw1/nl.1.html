@@ -1,0 +1,125 @@
+<html><head><title>Manpage of NL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+nl - number lines of files
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>nl</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Write each FILE to standard output, with line numbers added.
+With no FILE, or when FILE is -, read standard input.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-b</B>, <B>--body-numbering</B>=<I>STYLE</I></DT><DD>
+use STYLE for numbering body lines
+</DD><DT><B>-d</B>, <B>--section-delimiter</B>=<I>CC</I></DT><DD>
+use CC for separating logical pages
+</DD><DT><B>-f</B>, <B>--footer-numbering</B>=<I>STYLE</I></DT><DD>
+use STYLE for numbering footer lines
+</DD><DT><B>-h</B>, <B>--header-numbering</B>=<I>STYLE</I></DT><DD>
+use STYLE for numbering header lines
+</DD><DT><B>-i</B>, <B>--line-increment</B>=<I>NUMBER</I></DT><DD>
+line number increment at each line
+</DD><DT><B>-l</B>, <B>--join-blank-lines</B>=<I>NUMBER</I></DT><DD>
+group of NUMBER empty lines counted as one
+</DD><DT><B>-n</B>, <B>--number-format</B>=<I>FORMAT</I></DT><DD>
+insert line numbers according to FORMAT
+</DD><DT><B>-p</B>, <B>--no-renumber</B></DT><DD>
+do not reset line numbers at logical pages
+</DD><DT><B>-s</B>, <B>--number-separator</B>=<I>STRING</I></DT><DD>
+add STRING after (possible) line number
+</DD><DT><B>-v</B>, <B>--starting-line-number</B>=<I>NUMBER</I></DT><DD>
+first line number on each logical page
+</DD><DT><B>-w</B>, <B>--number-width</B>=<I>NUMBER</I></DT><DD>
+use NUMBER columns for line numbers
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+By default, selects <B>-v1</B> <B>-i1</B> <B>-l1</B> <B>-sTAB</B> <B>-w6</B> <B>-nrn</B> <B>-hn</B> <B>-bt</B> <B>-fn</B>.  CC are
+two delimiter characters for separating logical pages, a missing
+second character implies :.  Type \\ for \.  STYLE is one of:
+<DL COMPACT>
+<DT>a</DT><DD>
+number all lines
+</DD><DT>t</DT><DD>
+number only nonempty lines
+</DD><DT>n</DT><DD>
+number no lines
+</DD><DT>pBRE</DT><DD>
+number only lines that contain a match for the basic regular
+expression, BRE
+</DD></DL>
+<p>
+
+FORMAT is one of:
+<DL COMPACT>
+<DT>ln</DT><DD>
+left justified, no leading zeros
+</DD><DT>rn</DT><DD>
+right justified, no leading zeros
+</DD><DT>rz</DT><DD>
+right justified, leading zeros
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Scott Bartram and David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report nl translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/nl">http://www.gnu.org/software/coreutils/nl</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) nl invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

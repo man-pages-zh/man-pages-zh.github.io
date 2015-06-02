@@ -1,0 +1,153 @@
+<html><head><title>Manpage of DF</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+df - report file system disk space usage
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>df</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+This manual page
+documents the GNU version of
+<B>df</B>.
+
+<B>df</B>
+
+displays the amount of disk space available on the file system
+containing each file name argument.  If no file name is given, the
+space available on all currently mounted file systems is shown.  Disk
+space is shown in 1K blocks by default, unless the environment
+variable POSIXLY_CORRECT is set, in which case 512-byte blocks are
+used.
+<p>
+
+If an argument is the absolute file name of a disk device node containing a
+mounted file system,
+<B>df</B>
+
+shows the space available on that file system rather than on the
+file system containing the device node.  This version of
+<B>df</B>
+
+cannot show the space available on unmounted file systems, because on
+most kinds of systems doing so requires very nonportable intimate
+knowledge of file system structures.
+</div>
+<h2>OPTIONS</h2>
+<div class="content">
+
+<p>
+
+Show information about the file system on which each FILE resides,
+or all file systems by default.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-a</B>, <B>--all</B></DT><DD>
+include dummy file systems
+</DD><DT><B>-B</B>, <B>--block-size</B>=<I>SIZE</I></DT><DD>
+scale sizes by SIZE before printing them; e.g.,
+'-BM' prints sizes in units of 1,048,576 bytes;
+see SIZE format below
+</DD><DT><B>--total</B></DT><DD>
+produce a grand total
+</DD><DT><B>-h</B>, <B>--human-readable</B></DT><DD>
+print sizes in powers of 1024 (e.g., 1023M)
+</DD><DT><B>-H</B>, <B>--si</B></DT><DD>
+print sizes in powers of 1000 (e.g., 1.1G)
+</DD><DT><B>-i</B>, <B>--inodes</B></DT><DD>
+list inode information instead of block usage
+</DD><DT><B>-k</B></DT><DD>
+like <B>--block-size</B>=<I>1K</I>
+</DD><DT><B>-l</B>, <B>--local</B></DT><DD>
+limit listing to local file systems
+</DD><DT><B>--no-sync</B></DT><DD>
+do not invoke sync before getting usage info (default)
+</DD><DT><B>--output</B>[=<I>FIELD_LIST</I>]</DT><DD>
+use the output format defined by FIELD_LIST,
+or print all fields if FIELD_LIST is omitted.
+</DD><DT><B>-P</B>, <B>--portability</B></DT><DD>
+use the POSIX output format
+</DD><DT><B>--sync</B></DT><DD>
+invoke sync before getting usage info
+</DD><DT><B>-t</B>, <B>--type</B>=<I>TYPE</I></DT><DD>
+limit listing to file systems of type TYPE
+</DD><DT><B>-T</B>, <B>--print-type</B></DT><DD>
+print file system type
+</DD><DT><B>-x</B>, <B>--exclude-type</B>=<I>TYPE</I></DT><DD>
+limit listing to file systems not of type TYPE
+</DD><DT><B>-v</B></DT><DD>
+(ignored)
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Display values are in units of the first available SIZE from <B>--block-size</B>,
+and the DF_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables.
+Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set).
+<p>
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+<p>
+
+FIELD_LIST is a comma-separated list of columns to be included.  Valid
+field names are: 'source', 'fstype', 'itotal', 'iused', 'iavail', 'ipcent',
+'size', 'used', 'avail', 'pcent', 'file' and 'target' (see info page).
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Torbjorn Granlund, David MacKenzie, and Paul Eggert.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report df translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/df">http://www.gnu.org/software/coreutils/df</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) df invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

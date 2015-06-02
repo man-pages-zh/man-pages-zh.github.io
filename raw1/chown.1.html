@@ -1,0 +1,168 @@
+<html><head><title>Manpage of CHOWN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+chown - change file owner and group
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>chown</B>
+
+[<I>OPTION</I>]... [<I>OWNER</I>][<I>:</I>[<I>GROUP</I>]] <I>FILE</I>...
+<br />
+
+<B>chown</B>
+
+[<I>OPTION</I>]... <I>--reference=RFILE FILE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+This manual page
+documents the GNU version of
+<B>chown</B>.
+
+<B>chown</B>
+
+changes the user and/or group ownership of each given file.  If
+only an owner (a user name or numeric user ID) is given, that user is made the
+owner of each given file, and the files' group is not changed.  If the
+owner is followed by a colon and a group name (or numeric group ID),
+with no spaces between them, the group ownership of the files is
+changed as well.  If a colon but no group name follows the user name,
+that user is made the owner of the files and the group of the files is
+changed to that user's login group.  If the colon and group are given,
+but the owner is omitted, only the group of the files is changed;
+in this case,
+<B>chown</B>
+
+performs the same function as
+<B>chgrp</B>.
+
+If only a colon is given, or if the entire operand is empty, neither the
+owner nor the group is changed.
+</div>
+<h2>OPTIONS</h2>
+<div class="content">
+
+<p>
+
+Change the owner and/or group of each FILE to OWNER and/or GROUP.
+With <B>--reference</B>, change the owner and group of each FILE to those of RFILE.
+<DL COMPACT>
+<DT><B>-c</B>, <B>--changes</B></DT><DD>
+like verbose but report only when a change is made
+</DD><DT><B>-f</B>, <B>--silent</B>, <B>--quiet</B></DT><DD>
+suppress most error messages
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+output a diagnostic for every file processed
+</DD><DT><B>--dereference</B></DT><DD>
+affect the referent of each symbolic link (this is
+the default), rather than the symbolic link itself
+</DD><DT><B>-h</B>, <B>--no-dereference</B></DT><DD>
+affect symbolic links instead of any referenced file
+(useful only on systems that can change the
+ownership of a symlink)
+</DD><DT><B>--from</B>=<I>CURRENT_OWNER</I>:CURRENT_GROUP</DT><DD>
+change the owner and/or group of each file only if
+its current owner and/or group match those specified
+here.  Either may be omitted, in which case a match
+is not required for the omitted attribute
+</DD><DT><B>--no-preserve-root</B></DT><DD>
+do not treat '/' specially (the default)
+</DD><DT><B>--preserve-root</B></DT><DD>
+fail to operate recursively on '/'
+</DD><DT><B>--reference</B>=<I>RFILE</I></DT><DD>
+use RFILE's owner and group rather than
+specifying OWNER:GROUP values
+</DD><DT><B>-R</B>, <B>--recursive</B></DT><DD>
+operate on files and directories recursively
+</DD></DL>
+<p>
+
+The following options modify how a hierarchy is traversed when the <B>-R</B>
+option is also specified.  If more than one is specified, only the final
+one takes effect.
+<DL COMPACT>
+<DT><B>-H</B></DT><DD>
+if a command line argument is a symbolic link
+to a directory, traverse it
+</DD><DT><B>-L</B></DT><DD>
+traverse every symbolic link to a directory
+encountered
+</DD><DT><B>-P</B></DT><DD>
+do not traverse any symbolic links (default)
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Owner is unchanged if missing.  Group is unchanged if missing, but changed
+to login group if implied by a ':' following a symbolic OWNER.
+OWNER and GROUP may be numeric as well as symbolic.
+</div>
+<h2>EXAMPLES</h2>
+<div class="content">
+
+<DL COMPACT>
+<DT>chown root /u</DT><DD>
+Change the owner of /u to &quot;root&quot;.
+</DD><DT>chown root:staff /u</DT><DD>
+Likewise, but also change its group to &quot;staff&quot;.
+</DD><DT>chown -hR root /u</DT><DD>
+Change the owner of /u and subfiles to &quot;root&quot;.
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by David MacKenzie and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report chown translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man2/chown.2.html">chown</a>(2)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/chown">http://www.gnu.org/software/coreutils/chown</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) chown invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

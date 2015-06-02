@@ -1,0 +1,121 @@
+<html><head><title>Manpage of TOUCH</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+touch - change file timestamps
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>touch</B>
+
+[<I>OPTION</I>]... <I>FILE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Update the access and modification times of each FILE to the current time.
+<p>
+
+A FILE argument that does not exist is created empty, unless <B>-c</B> or <B>-h</B>
+is supplied.
+<p>
+
+A FILE argument string of - is handled specially and causes touch to
+change the times of the file associated with standard output.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-a</B></DT><DD>
+change only the access time
+</DD><DT><B>-c</B>, <B>--no-create</B></DT><DD>
+do not create any files
+</DD><DT><B>-d</B>, <B>--date</B>=<I>STRING</I></DT><DD>
+parse STRING and use it instead of current time
+</DD><DT><B>-f</B></DT><DD>
+(ignored)
+</DD><DT><B>-h</B>, <B>--no-dereference</B></DT><DD>
+affect each symbolic link instead of any referenced
+file (useful only on systems that can change the
+timestamps of a symlink)
+</DD><DT><B>-m</B></DT><DD>
+change only the modification time
+</DD><DT><B>-r</B>, <B>--reference</B>=<I>FILE</I></DT><DD>
+use this file's times instead of current time
+</DD><DT><B>-t</B> STAMP</DT><DD>
+use [[CC]YY]MMDDhhmm[.ss] instead of current time
+</DD><DT><B>--time</B>=<I>WORD</I></DT><DD>
+change the specified time:
+WORD is access, atime, or use: equivalent to <B>-a</B>
+WORD is modify or mtime: equivalent to <B>-m</B>
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Note that the <B>-d</B> and <B>-t</B> options accept different time-date formats.
+</div>
+<h2>DATE STRING</h2>
+<div class="content">
+
+
+The --date=STRING is a mostly free format human readable date string
+such as &quot;Sun, 29 Feb 2004 16:21:42 -0800&quot; or &quot;2004-02-29 16:21:42&quot; or
+even &quot;next Thursday&quot;.  A date string may contain items indicating
+calendar date, time of day, time zone, day of week, relative time,
+relative date, and numbers.  An empty string indicates the beginning
+of the day.  The date string format is more complex than is easily
+documented here but is fully described in the info documentation.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Paul Rubin, Arnold Robbins, Jim Kingdon,
+David MacKenzie, and Randy Smith.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report touch translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/touch">http://www.gnu.org/software/coreutils/touch</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) touch invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

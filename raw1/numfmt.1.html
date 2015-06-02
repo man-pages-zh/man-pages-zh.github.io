@@ -1,0 +1,196 @@
+<html><head><title>Manpage of NUMFMT</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+numfmt - Convert numbers from/to human-readable strings
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>numfmt</B>
+
+[<I>OPTION</I>]... [<I>NUMBER</I>]...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Reformat NUMBER(s), or the numbers from standard input if none are specified.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>--debug</B></DT><DD>
+print warnings about invalid input
+</DD><DT><B>-d</B>, <B>--delimiter</B>=<I>X</I></DT><DD>
+use X instead of whitespace for field delimiter
+</DD><DT><B>--field</B>=<I>N</I></DT><DD>
+replace the number in input field N (default is 1)
+</DD><DT><B>--format</B>=<I>FORMAT</I></DT><DD>
+use printf style floating-point FORMAT;
+see FORMAT below for details
+</DD><DT><B>--from</B>=<I>UNIT</I></DT><DD>
+auto-scale input numbers to UNITs; default is 'none';
+see UNIT below
+</DD><DT><B>--from-unit</B>=<I>N</I></DT><DD>
+specify the input unit size (instead of the default 1)
+</DD><DT><B>--grouping</B></DT><DD>
+use locale-defined grouping of digits, e.g. 1,000,000
+(which means it has no effect in the C/POSIX locale)
+</DD><DT><B>--header</B>[=<I>N</I>]</DT><DD>
+print (without converting) the first N header lines;
+N defaults to 1 if not specified
+</DD><DT><B>--invalid</B>=<I>MODE</I></DT><DD>
+failure mode for invalid numbers: MODE can be:
+abort (default), fail, warn, ignore
+</DD><DT><B>--padding</B>=<I>N</I></DT><DD>
+pad the output to N characters; positive N will
+right-align; negative N will left-align;
+padding is ignored if the output is wider than N;
+the default is to automatically pad if a whitespace
+is found
+</DD><DT><B>--round</B>=<I>METHOD</I></DT><DD>
+use METHOD for rounding when scaling; METHOD can be:
+up, down, from-zero (default), towards-zero, nearest
+</DD><DT><B>--suffix</B>=<I>SUFFIX</I></DT><DD>
+add SUFFIX to output numbers, and accept optional
+SUFFIX in input numbers
+</DD><DT><B>--to</B>=<I>UNIT</I></DT><DD>
+auto-scale output numbers to UNITs; see UNIT below
+</DD><DT><B>--to-unit</B>=<I>N</I></DT><DD>
+the output unit size (instead of the default 1)
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<h3>UNIT options:</h3>
+
+<DL COMPACT>
+<DT>none</DT><DD>
+no auto-scaling is done; suffixes will trigger an error
+</DD><DT>auto</DT><DD>
+accept optional single/two letter suffix:
+</DD><DT></DT><DD>
+1K = 1000,
+1Ki = 1024,
+1M = 1000000,
+1Mi = 1048576,
+</DD><DT>si</DT><DD>
+accept optional single letter suffix:
+</DD><DT></DT><DD>
+1K = 1000,
+1M = 1000000,
+...
+</DD><DT>iec</DT><DD>
+accept optional single letter suffix:
+</DD><DT></DT><DD>
+1K = 1024,
+1M = 1048576,
+...
+</DD><DT>iec-i</DT><DD>
+accept optional two-letter suffix:
+</DD><DT></DT><DD>
+1Ki = 1024,
+1Mi = 1048576,
+...
+</DD></DL>
+<p>
+
+FORMAT must be suitable for printing one floating-point argument '%f'.
+Optional quote (%'f) will enable <B>--grouping</B> (if supported by current locale).
+Optional width value (%10f) will pad output. Optional zero (%010f) width
+will zero pad the number. Optional negative values (%-10f) will left align.
+<p>
+
+Exit status is 0 if all input numbers were successfully converted.
+By default, numfmt will stop at the first conversion error with exit status 2.
+With <B>--invalid=</B>'fail' a warning is printed for each conversion error
+and the exit status is 2.  With <B>--invalid=</B>'warn' each conversion error is
+diagnosed, but the exit status is 0.  With <B>--invalid=</B>'ignore' conversion
+errors are not diagnosed and the exit status is 0.
+</div>
+<h2>EXAMPLES</h2>
+<div class="content">
+
+<DL COMPACT>
+<DT></DT><DD>
+<tt>$ numfmt --to=si 1000</tt>
+</DD><DT></DT><DD>
+-&gt; &quot;1.0K&quot;
+</DD><DT></DT><DD>
+<tt>$ numfmt --to=iec 2048</tt>
+</DD><DT></DT><DD>
+-&gt; &quot;2.0K&quot;
+</DD><DT></DT><DD>
+<tt>$ numfmt --to=iec-i 4096</tt>
+</DD><DT></DT><DD>
+-&gt; &quot;4.0Ki&quot;
+</DD><DT></DT><DD>
+<tt>$ echo 1K | numfmt --from=si</tt>
+</DD><DT></DT><DD>
+-&gt; &quot;1000&quot;
+</DD><DT></DT><DD>
+<tt>$ echo 1K | numfmt --from=iec</tt>
+</DD><DT></DT><DD>
+-&gt; &quot;1024&quot;
+</DD><DT></DT><DD>
+<tt>$ df | numfmt --header --field 2 --to=si</tt>
+<br />
+
+<tt>$ ls -l | numfmt --header --field 5 --to=iec</tt>
+<br />
+
+<tt>$ ls -lh | numfmt --header --field 5 --from=iec --padding=10</tt>
+<br />
+
+<tt>$ ls -lh | numfmt --header --field 5 --from=iec --format %10f</tt>
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Assaf Gordon.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report numfmt translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/numfmt">http://www.gnu.org/software/coreutils/numfmt</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) numfmt invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

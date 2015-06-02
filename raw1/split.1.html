@@ -1,0 +1,114 @@
+<html><head><title>Manpage of SPLIT</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+split - split a file into pieces
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>split</B>
+
+[<I>OPTION</I>]... [<I>INPUT </I>[<I>PREFIX</I>]]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Output fixed-size pieces of INPUT to PREFIXaa, PREFIXab, ...; default
+size is 1000 lines, and default PREFIX is 'x'.  With no INPUT, or when INPUT
+is -, read standard input.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-a</B>, <B>--suffix-length</B>=<I>N</I></DT><DD>
+generate suffixes of length N (default 2)
+</DD><DT><B>--additional-suffix</B>=<I>SUFFIX</I></DT><DD>
+append an additional SUFFIX to file names
+</DD><DT><B>-b</B>, <B>--bytes</B>=<I>SIZE</I></DT><DD>
+put SIZE bytes per output file
+</DD><DT><B>-C</B>, <B>--line-bytes</B>=<I>SIZE</I></DT><DD>
+put at most SIZE bytes of lines per output file
+</DD><DT><B>-d</B>, <B>--numeric-suffixes</B>[=<I>FROM</I>]</DT><DD>
+use numeric suffixes instead of alphabetic;
+FROM changes the start value (default 0)
+</DD><DT><B>-e</B>, <B>--elide-empty-files</B></DT><DD>
+do not generate empty output files with '-n'
+</DD><DT><B>--filter</B>=<I>COMMAND</I></DT><DD>
+write to shell COMMAND; file name is $FILE
+</DD><DT><B>-l</B>, <B>--lines</B>=<I>NUMBER</I></DT><DD>
+put NUMBER lines per output file
+</DD><DT><B>-n</B>, <B>--number</B>=<I>CHUNKS</I></DT><DD>
+generate CHUNKS output files; see explanation below
+</DD><DT><B>-u</B>, <B>--unbuffered</B></DT><DD>
+immediately copy input to output with '-n r/...'
+</DD><DT><B>--verbose</B></DT><DD>
+print a diagnostic just before each
+output file is opened
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+<p>
+
+CHUNKS may be:
+N       split into N files based on size of input
+K/N     output Kth of N to stdout
+l/N     split into N files without splitting lines
+l/K/N   output Kth of N to stdout without splitting lines
+r/N     like 'l' but use round robin distribution
+r/K/N   likewise but only output Kth of N to stdout
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Torbjorn Granlund and Richard M. Stallman.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report split translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/split">http://www.gnu.org/software/coreutils/split</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) split invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

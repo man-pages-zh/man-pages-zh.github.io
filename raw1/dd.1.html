@@ -1,0 +1,200 @@
+<html><head><title>Manpage of DD</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+dd - convert and copy a file
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>dd</B>
+
+[<I>OPERAND</I>]...
+<br />
+
+<B>dd</B>
+
+<I>OPTION</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Copy a file, converting and formatting according to the operands.
+<DL COMPACT>
+<DT>bs=BYTES</DT><DD>
+read and write up to BYTES bytes at a time
+</DD><DT>cbs=BYTES</DT><DD>
+convert BYTES bytes at a time
+</DD><DT>conv=CONVS</DT><DD>
+convert the file as per the comma separated symbol list
+</DD><DT>count=N</DT><DD>
+copy only N input blocks
+</DD><DT>ibs=BYTES</DT><DD>
+read up to BYTES bytes at a time (default: 512)
+</DD><DT>if=FILE</DT><DD>
+read from FILE instead of stdin
+</DD><DT>iflag=FLAGS</DT><DD>
+read as per the comma separated symbol list
+</DD><DT>obs=BYTES</DT><DD>
+write BYTES bytes at a time (default: 512)
+</DD><DT>of=FILE</DT><DD>
+write to FILE instead of stdout
+</DD><DT>oflag=FLAGS</DT><DD>
+write as per the comma separated symbol list
+</DD><DT>seek=N</DT><DD>
+skip N obs-sized blocks at start of output
+</DD><DT>skip=N</DT><DD>
+skip N ibs-sized blocks at start of input
+</DD><DT>status=WHICH</DT><DD>
+WHICH info to suppress outputting to stderr;
+'noxfer' suppresses transfer stats, 'none' suppresses all
+</DD></DL>
+<p>
+
+N and BYTES may be followed by the following multiplicative suffixes:
+c =1, w =2, b =512, kB =1000, K =1024, MB =1000*1000, M =1024*1024, xM =M
+GB =1000*1000*1000, G =1024*1024*1024, and so on for T, P, E, Z, Y.
+<p>
+
+Each CONV symbol may be:
+<DL COMPACT>
+<DT>ascii</DT><DD>
+from EBCDIC to ASCII
+</DD><DT>ebcdic</DT><DD>
+from ASCII to EBCDIC
+</DD><DT>ibm</DT><DD>
+from ASCII to alternate EBCDIC
+</DD><DT>block</DT><DD>
+pad newline-terminated records with spaces to cbs-size
+</DD><DT>unblock</DT><DD>
+replace trailing spaces in cbs-size records with newline
+</DD><DT>lcase</DT><DD>
+change upper case to lower case
+</DD><DT>ucase</DT><DD>
+change lower case to upper case
+</DD><DT>sparse</DT><DD>
+try to seek rather than write the output for NUL input blocks
+</DD><DT>swab</DT><DD>
+swap every pair of input bytes
+</DD><DT>sync</DT><DD>
+pad every input block with NULs to ibs-size; when used
+with block or unblock, pad with spaces rather than NULs
+</DD><DT>excl</DT><DD>
+fail if the output file already exists
+</DD><DT>nocreat</DT><DD>
+do not create the output file
+</DD><DT>notrunc</DT><DD>
+do not truncate the output file
+</DD><DT>noerror</DT><DD>
+continue after read errors
+</DD><DT>fdatasync</DT><DD>
+physically write output file data before finishing
+</DD><DT>fsync</DT><DD>
+likewise, but also write metadata
+</DD></DL>
+<p>
+
+Each FLAG symbol may be:
+<DL COMPACT>
+<DT>append</DT><DD>
+append mode (makes sense only for output; conv=notrunc suggested)
+</DD><DT>direct</DT><DD>
+use direct I/O for data
+</DD><DT>directory</DT><DD>
+fail unless a directory
+</DD><DT>dsync</DT><DD>
+use synchronized I/O for data
+</DD><DT>sync</DT><DD>
+likewise, but also for metadata
+</DD><DT>fullblock</DT><DD>
+accumulate full blocks of input (iflag only)
+</DD><DT>nonblock</DT><DD>
+use non-blocking I/O
+</DD><DT>noatime</DT><DD>
+do not update access time
+</DD><DT>nocache</DT><DD>
+discard cached data
+</DD><DT>noctty</DT><DD>
+do not assign controlling terminal from file
+</DD><DT>nofollow</DT><DD>
+do not follow symlinks
+</DD><DT>count_bytes</DT><DD>
+treat 'count=N' as a byte count (iflag only)
+</DD><DT>skip_bytes</DT><DD>
+treat 'skip=N' as a byte count (iflag only)
+</DD><DT>seek_bytes</DT><DD>
+treat 'seek=N' as a byte count (oflag only)
+</DD></DL>
+<p>
+
+Sending a USR1 signal to a running 'dd' process makes it
+print I/O statistics to standard error and then resume copying.
+<DL COMPACT>
+<DT></DT><DD>
+<tt>$ dd if=/dev/zero of=/dev/null&amp; pid=$!</tt>
+<br />
+
+<tt>$ kill -USR1 $pid; sleep 1; kill $pid</tt>
+</DD><DT></DT><DD>
+18335302+0 records in
+18335302+0 records out
+9387674624 bytes (9.4 GB) copied, 34.6279 seconds, 271 MB/s
+</DD></DL>
+<p>
+
+Options are:
+<DL COMPACT>
+<DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Paul Rubin, David MacKenzie, and Stuart Kemp.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report dd translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/dd">http://www.gnu.org/software/coreutils/dd</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) dd invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

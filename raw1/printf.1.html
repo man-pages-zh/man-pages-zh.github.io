@@ -1,0 +1,131 @@
+<html><head><title>Manpage of PRINTF</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+printf - format and print data
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>printf</B>
+
+<I>FORMAT </I>[<I>ARGUMENT</I>]...
+<br />
+
+<B>printf</B>
+
+<I>OPTION</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Print ARGUMENT(s) according to FORMAT, or execute according to OPTION:
+<DL COMPACT>
+<DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+FORMAT controls the output as in C printf.  Interpreted sequences are:
+<DL COMPACT>
+<DT>\&quot;</DT><DD>
+double quote
+</DD><DT>\\</DT><DD>
+backslash
+</DD><DT>\a</DT><DD>
+alert (BEL)
+</DD><DT>\b</DT><DD>
+backspace
+</DD><DT>\c</DT><DD>
+produce no further output
+</DD><DT>\e</DT><DD>
+escape
+</DD><DT>\f</DT><DD>
+form feed
+</DD><DT>\n</DT><DD>
+new line
+</DD><DT>\r</DT><DD>
+carriage return
+</DD><DT>\t</DT><DD>
+horizontal tab
+</DD><DT>\v</DT><DD>
+vertical tab
+</DD><DT>\NNN</DT><DD>
+byte with octal value NNN (1 to 3 digits)
+</DD><DT>\xHH</DT><DD>
+byte with hexadecimal value HH (1 to 2 digits)
+</DD><DT>\uHHHH</DT><DD>
+Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits)
+</DD><DT>\UHHHHHHHH</DT><DD>
+Unicode character with hex value HHHHHHHH (8 digits)
+</DD><DT>%%</DT><DD>
+a single %
+</DD><DT>%b</DT><DD>
+ARGUMENT as a string with '\' escapes interpreted,
+except that octal escapes are of the form \0 or \0NNN
+</DD></DL>
+<p>
+
+and all C format specifications ending with one of diouxXfeEgGcs, with
+ARGUMENTs converted to proper type first.  Variable widths are handled.
+<p>
+
+NOTE: your shell may have its own version of printf, which usually supersedes
+the version described here.  Please refer to your shell's documentation
+for details about the options it supports.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report printf translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man3/printf.3.html">printf</a>(3)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/printf">http://www.gnu.org/software/coreutils/printf</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) printf invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

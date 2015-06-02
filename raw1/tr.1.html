@@ -1,0 +1,149 @@
+<html><head><title>Manpage of TR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+tr - translate or delete characters
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>tr</B>
+
+[<I>OPTION</I>]... <I>SET1 </I>[<I>SET2</I>]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Translate, squeeze, and/or delete characters from standard input,
+writing to standard output.
+<DL COMPACT>
+<DT><B>-c</B>, <B>-C</B>, <B>--complement</B></DT><DD>
+use the complement of SET1
+</DD><DT><B>-d</B>, <B>--delete</B></DT><DD>
+delete characters in SET1, do not translate
+</DD><DT><B>-s</B>, <B>--squeeze-repeats</B></DT><DD>
+replace each input sequence of a repeated character
+that is listed in SET1 with a single occurrence
+of that character
+</DD><DT><B>-t</B>, <B>--truncate-set1</B></DT><DD>
+first truncate SET1 to length of SET2
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+SETs are specified as strings of characters.  Most represent themselves.
+Interpreted sequences are:
+<DL COMPACT>
+<DT>\NNN</DT><DD>
+character with octal value NNN (1 to 3 octal digits)
+</DD><DT>\\</DT><DD>
+backslash
+</DD><DT>\a</DT><DD>
+audible BEL
+</DD><DT>\b</DT><DD>
+backspace
+</DD><DT>\f</DT><DD>
+form feed
+</DD><DT>\n</DT><DD>
+new line
+</DD><DT>\r</DT><DD>
+return
+</DD><DT>\t</DT><DD>
+horizontal tab
+</DD><DT>\v</DT><DD>
+vertical tab
+</DD><DT>CHAR1-CHAR2</DT><DD>
+all characters from CHAR1 to CHAR2 in ascending order
+</DD><DT>[CHAR*]</DT><DD>
+in SET2, copies of CHAR until length of SET1
+</DD><DT>[CHAR*REPEAT]</DT><DD>
+REPEAT copies of CHAR, REPEAT octal if starting with 0
+</DD><DT>[:alnum:]</DT><DD>
+all letters and digits
+</DD><DT>[:alpha:]</DT><DD>
+all letters
+</DD><DT>[:blank:]</DT><DD>
+all horizontal whitespace
+</DD><DT>[:cntrl:]</DT><DD>
+all control characters
+</DD><DT>[:digit:]</DT><DD>
+all digits
+</DD><DT>[:graph:]</DT><DD>
+all printable characters, not including space
+</DD><DT>[:lower:]</DT><DD>
+all lower case letters
+</DD><DT>[:print:]</DT><DD>
+all printable characters, including space
+</DD><DT>[:punct:]</DT><DD>
+all punctuation characters
+</DD><DT>[:space:]</DT><DD>
+all horizontal or vertical whitespace
+</DD><DT>[:upper:]</DT><DD>
+all upper case letters
+</DD><DT>[:xdigit:]</DT><DD>
+all hexadecimal digits
+</DD><DT>[=CHAR=]</DT><DD>
+all characters which are equivalent to CHAR
+</DD></DL>
+<p>
+
+Translation occurs if <B>-d</B> is not given and both SET1 and SET2 appear.
+<B>-t</B> may be used only when translating.  SET2 is extended to length of
+SET1 by repeating its last character as necessary.  Excess characters
+of SET2 are ignored.  Only [:lower:] and [:upper:] are guaranteed to
+expand in ascending order; used in SET2 while translating, they may
+only be used in pairs to specify case conversion.  <B>-s</B> uses SET1 if not
+translating nor deleting; else squeezing uses SET2 and occurs after
+translation or deletion.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report tr translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/tr">http://www.gnu.org/software/coreutils/tr</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) tr invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

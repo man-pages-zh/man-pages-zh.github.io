@@ -1,0 +1,192 @@
+<html><head><title>Manpage of STAT</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+stat - display file or file system status
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>stat</B>
+
+[<I>OPTION</I>]... <I>FILE</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Display file or file system status.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-L</B>, <B>--dereference</B></DT><DD>
+follow links
+</DD><DT><B>-f</B>, <B>--file-system</B></DT><DD>
+display file system status instead of file status
+</DD><DT><B>-c</B>  <B>--format</B>=<I>FORMAT</I></DT><DD>
+use the specified FORMAT instead of the default;
+output a newline after each use of FORMAT
+</DD><DT><B>--printf</B>=<I>FORMAT</I></DT><DD>
+like <B>--format</B>, but interpret backslash escapes,
+and do not output a mandatory trailing newline;
+if you want a newline, include \n in FORMAT
+</DD><DT><B>-t</B>, <B>--terse</B></DT><DD>
+print the information in terse form
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+The valid format sequences for files (without <B>--file-system</B>):
+<DL COMPACT>
+<DT>%a</DT><DD>
+access rights in octal
+</DD><DT>%A</DT><DD>
+access rights in human readable form
+</DD><DT>%b</DT><DD>
+number of blocks allocated (see %B)
+</DD><DT>%B</DT><DD>
+the size in bytes of each block reported by %b
+</DD><DT>%C</DT><DD>
+SELinux security context string
+</DD><DT>%d</DT><DD>
+device number in decimal
+</DD><DT>%D</DT><DD>
+device number in hex
+</DD><DT>%f</DT><DD>
+raw mode in hex
+</DD><DT>%F</DT><DD>
+file type
+</DD><DT>%g</DT><DD>
+group ID of owner
+</DD><DT>%G</DT><DD>
+group name of owner
+</DD><DT>%h</DT><DD>
+number of hard links
+</DD><DT>%i</DT><DD>
+inode number
+</DD><DT>%m</DT><DD>
+mount point
+</DD><DT>%n</DT><DD>
+file name
+</DD><DT>%N</DT><DD>
+quoted file name with dereference if symbolic link
+</DD><DT>%o</DT><DD>
+optimal I/O transfer size hint
+</DD><DT>%s</DT><DD>
+total size, in bytes
+</DD><DT>%t</DT><DD>
+major device type in hex, for character/block device special files
+</DD><DT>%T</DT><DD>
+minor device type in hex, for character/block device special files
+</DD><DT>%u</DT><DD>
+user ID of owner
+</DD><DT>%U</DT><DD>
+user name of owner
+</DD><DT>%w</DT><DD>
+time of file birth, human-readable; - if unknown
+</DD><DT>%W</DT><DD>
+time of file birth, seconds since Epoch; 0 if unknown
+</DD><DT>%x</DT><DD>
+time of last access, human-readable
+</DD><DT>%X</DT><DD>
+time of last access, seconds since Epoch
+</DD><DT>%y</DT><DD>
+time of last data modification, human-readable
+</DD><DT>%Y</DT><DD>
+time of last data modification, seconds since Epoch
+</DD><DT>%z</DT><DD>
+time of last status change, human-readable
+</DD><DT>%Z</DT><DD>
+time of last status change, seconds since Epoch
+</DD></DL>
+<p>
+
+Valid format sequences for file systems:
+<DL COMPACT>
+<DT>%a</DT><DD>
+free blocks available to non-superuser
+</DD><DT>%b</DT><DD>
+total data blocks in file system
+</DD><DT>%c</DT><DD>
+total file nodes in file system
+</DD><DT>%d</DT><DD>
+free file nodes in file system
+</DD><DT>%f</DT><DD>
+free blocks in file system
+</DD><DT>%i</DT><DD>
+file system ID in hex
+</DD><DT>%l</DT><DD>
+maximum length of filenames
+</DD><DT>%n</DT><DD>
+file name
+</DD><DT>%s</DT><DD>
+block size (for faster transfers)
+</DD><DT>%S</DT><DD>
+fundamental block size (for block counts)
+</DD><DT>%t</DT><DD>
+file system type in hex
+</DD><DT>%T</DT><DD>
+file system type in human readable form
+</DD></DL>
+<p>
+
+NOTE: your shell may have its own version of stat, which usually supersedes
+the version described here.  Please refer to your shell's documentation
+for details about the options it supports.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Michael Meskes.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report stat translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man2/stat.2.html">stat</a>(2)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/stat">http://www.gnu.org/software/coreutils/stat</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) stat invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

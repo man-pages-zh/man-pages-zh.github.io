@@ -1,0 +1,192 @@
+<html><head><title>Manpage of DU</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+du - estimate file space usage
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>du</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]...
+<br />
+
+<B>du</B>
+
+[<I>OPTION</I>]... <I>--files0-from=F</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Summarize disk usage of each FILE, recursively for directories.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-0</B>, <B>--null</B></DT><DD>
+end each output line with NUL, not newline
+</DD><DT><B>-a</B>, <B>--all</B></DT><DD>
+write counts for all files, not just directories
+</DD><DT><B>--apparent-size</B></DT><DD>
+print apparent sizes, rather than disk usage; although
+the apparent size is usually smaller, it may be
+larger due to holes in ('sparse') files, internal
+fragmentation, indirect blocks, and the like
+</DD><DT><B>-B</B>, <B>--block-size</B>=<I>SIZE</I></DT><DD>
+scale sizes by SIZE before printing them; e.g.,
+'-BM' prints sizes in units of 1,048,576 bytes;
+see SIZE format below
+</DD><DT><B>-b</B>, <B>--bytes</B></DT><DD>
+equivalent to '--apparent-size <B>--block-size</B>=<I>1</I>'
+</DD><DT><B>-c</B>, <B>--total</B></DT><DD>
+produce a grand total
+</DD><DT><B>-D</B>, <B>--dereference-args</B></DT><DD>
+dereference only symlinks that are listed on the
+command line
+</DD><DT><B>-d</B>, <B>--max-depth</B>=<I>N</I></DT><DD>
+print the total for a directory (or file, with <B>--all</B>)
+only if it is N or fewer levels below the command
+line argument;  <B>--max-depth</B>=<I>0</I> is the same as
+<B>--summarize</B>
+</DD><DT><B>--files0-from</B>=<I>F</I></DT><DD>
+summarize disk usage of the
+NUL-terminated file names specified in file F;
+if F is -, then read names from standard input
+</DD><DT><B>-H</B></DT><DD>
+equivalent to <B>--dereference-args</B> (<B>-D</B>)
+</DD><DT><B>-h</B>, <B>--human-readable</B></DT><DD>
+print sizes in human readable format (e.g., 1K 234M 2G)
+</DD><DT><B>--inodes</B></DT><DD>
+list inode usage information instead of block usage
+</DD><DT><B>-k</B></DT><DD>
+like <B>--block-size</B>=<I>1K</I>
+</DD><DT><B>-L</B>, <B>--dereference</B></DT><DD>
+dereference all symbolic links
+</DD><DT><B>-l</B>, <B>--count-links</B></DT><DD>
+count sizes many times if hard linked
+</DD><DT><B>-m</B></DT><DD>
+like <B>--block-size</B>=<I>1M</I>
+</DD><DT><B>-P</B>, <B>--no-dereference</B></DT><DD>
+don't follow any symbolic links (this is the default)
+</DD><DT><B>-S</B>, <B>--separate-dirs</B></DT><DD>
+for directories do not include size of subdirectories
+</DD><DT><B>--si</B></DT><DD>
+like <B>-h</B>, but use powers of 1000 not 1024
+</DD><DT><B>-s</B>, <B>--summarize</B></DT><DD>
+display only a total for each argument
+</DD><DT><B>-t</B>, <B>--threshold</B>=<I>SIZE</I></DT><DD>
+exclude entries smaller than SIZE if positive,
+or entries greater than SIZE if negative
+</DD><DT><B>--time</B></DT><DD>
+show time of the last modification of any file in the
+directory, or any of its subdirectories
+</DD><DT><B>--time</B>=<I>WORD</I></DT><DD>
+show time as WORD instead of modification time:
+atime, access, use, ctime or status
+</DD><DT><B>--time-style</B>=<I>STYLE</I></DT><DD>
+show times using STYLE, which can be:
+full-iso, long-iso, iso, or +FORMAT;
+FORMAT is interpreted like in 'date'
+</DD><DT><B>-X</B>, <B>--exclude-from</B>=<I>FILE</I></DT><DD>
+exclude files that match any pattern in FILE
+</DD><DT><B>--exclude</B>=<I>PATTERN</I></DT><DD>
+exclude files that match PATTERN
+</DD><DT><B>-x</B>, <B>--one-file-system</B></DT><DD>
+skip directories on different file systems
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Display values are in units of the first available SIZE from <B>--block-size</B>,
+and the DU_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables.
+Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set).
+<p>
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+</div>
+<h2>PATTERNS</h2>
+<div class="content">
+
+PATTERN is a shell pattern (not a regular expression).  The pattern
+<B>?</B>
+
+matches any one character, whereas
+<B>*</B>
+
+matches any string (composed of zero, one or multiple characters).  For
+example,
+<B>*.o</B>
+
+will match any files whose names end in
+<B>.o</B>.
+
+Therefore, the command
+<DL COMPACT>
+<DT></DT><DD>
+<B>du --exclude=aq*.oaq</B>
+
+</DD></DL>
+<p>
+
+will skip all files and subdirectories ending in
+<B>.o</B>
+
+(including the file
+<B>.o</B>
+
+itself).
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Torbjorn Granlund, David MacKenzie, Paul Eggert,
+and Jim Meyering.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report du translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/du">http://www.gnu.org/software/coreutils/du</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) du invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

@@ -1,0 +1,125 @@
+<html><head><title>Manpage of JOIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+join - join lines of two files on a common field
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>join</B>
+
+[<I>OPTION</I>]... <I>FILE1 FILE2</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+For each pair of input lines with identical join fields, write a line to
+standard output.  The default join field is the first, delimited
+by whitespace.  When FILE1 or FILE2 (not both) is -, read standard input.
+<DL COMPACT>
+<DT><B>-a</B> FILENUM</DT><DD>
+also print unpairable lines from file FILENUM, where
+FILENUM is 1 or 2, corresponding to FILE1 or FILE2
+</DD><DT><B>-e</B> EMPTY</DT><DD>
+replace missing input fields with EMPTY
+</DD><DT><B>-i</B>, <B>--ignore-case</B></DT><DD>
+ignore differences in case when comparing fields
+</DD><DT><B>-j</B> FIELD</DT><DD>
+equivalent to '-1 FIELD <B>-2</B> FIELD'
+</DD><DT><B>-o</B> FORMAT</DT><DD>
+obey FORMAT while constructing output line
+</DD><DT><B>-t</B> CHAR</DT><DD>
+use CHAR as input and output field separator
+</DD><DT><B>-v</B> FILENUM</DT><DD>
+like <B>-a</B> FILENUM, but suppress joined output lines
+</DD><DT><B>-1</B> FIELD</DT><DD>
+join on this FIELD of file 1
+</DD><DT><B>-2</B> FIELD</DT><DD>
+join on this FIELD of file 2
+</DD><DT><B>--check-order</B></DT><DD>
+check that the input is correctly sorted, even
+if all input lines are pairable
+</DD><DT><B>--nocheck-order</B></DT><DD>
+do not check that the input is correctly sorted
+</DD><DT><B>--header</B></DT><DD>
+treat the first line in each file as field headers,
+print them without trying to pair them
+</DD><DT><B>-z</B>, <B>--zero-terminated</B></DT><DD>
+line delimiter is NUL, not newline
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Unless <B>-t</B> CHAR is given, leading blanks separate fields and are ignored,
+else fields are separated by CHAR.  Any FIELD is a field number counted
+from 1.  FORMAT is one or more comma or blank separated specifications,
+each being 'FILENUM.FIELD' or '0'.  Default FORMAT outputs the join field,
+the remaining fields from FILE1, the remaining fields from FILE2, all
+separated by CHAR.  If FORMAT is the keyword 'auto', then the first
+line of each file determines the number of fields output for each line.
+<p>
+
+Important: FILE1 and FILE2 must be sorted on the join fields.
+E.g., use &quot;sort <B>-k</B> 1b,1&quot; if 'join' has no options,
+or use &quot;join <B>-t</B> ''&quot; if 'sort' has no options.
+Note, comparisons honor the rules specified by 'LC_COLLATE'.
+If the input is not sorted and some lines cannot be joined, a
+warning message will be given.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Mike Haertel.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report join translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+<a href="../man1/comm.1.html">comm</a>(1), <a href="../man1/uniq.1.html">uniq</a>(1)
+<p>
+
+<br />
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/join">http://www.gnu.org/software/coreutils/join</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) join invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

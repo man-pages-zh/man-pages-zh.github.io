@@ -1,0 +1,117 @@
+<html><head><title>Manpage of PTX</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+ptx - produce a permuted index of file contents
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>ptx</B>
+
+[<I>OPTION</I>]... [<I>INPUT</I>]...   <I>(without -G)</I>
+<br />
+
+<B>ptx</B>
+
+<I>-G </I>[<I>OPTION</I>]... [<I>INPUT </I>[<I>OUTPUT</I>]]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Output a permuted index, including context, of the words in the input files.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-A</B>, <B>--auto-reference</B></DT><DD>
+output automatically generated references
+</DD><DT><B>-G</B>, <B>--traditional</B></DT><DD>
+behave more like System V 'ptx'
+</DD><DT><B>-F</B>, <B>--flag-truncation</B>=<I>STRING</I></DT><DD>
+use STRING for flagging line truncations
+</DD><DT><B>-M</B>, <B>--macro-name</B>=<I>STRING</I></DT><DD>
+macro name to use instead of 'xx'
+</DD><DT><B>-O</B>, <B>--format</B>=<I>roff</I></DT><DD>
+generate output as roff directives
+</DD><DT><B>-R</B>, <B>--right-side-refs</B></DT><DD>
+put references at right, not counted in <B>-w</B>
+</DD><DT><B>-S</B>, <B>--sentence-regexp</B>=<I>REGEXP</I></DT><DD>
+for end of lines or end of sentences
+</DD><DT><B>-T</B>, <B>--format</B>=<I>tex</I></DT><DD>
+generate output as TeX directives
+</DD><DT><B>-W</B>, <B>--word-regexp</B>=<I>REGEXP</I></DT><DD>
+use REGEXP to match each keyword
+</DD><DT><B>-b</B>, <B>--break-file</B>=<I>FILE</I></DT><DD>
+word break characters in this FILE
+</DD><DT><B>-f</B>, <B>--ignore-case</B></DT><DD>
+fold lower case to upper case for sorting
+</DD><DT><B>-g</B>, <B>--gap-size</B>=<I>NUMBER</I></DT><DD>
+gap size in columns between output fields
+</DD><DT><B>-i</B>, <B>--ignore-file</B>=<I>FILE</I></DT><DD>
+read ignore word list from FILE
+</DD><DT><B>-o</B>, <B>--only-file</B>=<I>FILE</I></DT><DD>
+read only word list from this FILE
+</DD><DT><B>-r</B>, <B>--references</B></DT><DD>
+first field of each line is a reference
+</DD><DT>
+<B>-t</B>, <B>--typeset-mode</B>               - not implemented -
+</DD><DT><B>-w</B>, <B>--width</B>=<I>NUMBER</I></DT><DD>
+</DT><DD>output width in columns, reference excluded
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+With no FILE, or when FILE is -, read standard input.  Default is '-F /'.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by F. Pinard.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report ptx translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/ptx">http://www.gnu.org/software/coreutils/ptx</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) ptx invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

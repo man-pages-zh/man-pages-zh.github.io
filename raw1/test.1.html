@@ -1,0 +1,186 @@
+<html><head><title>Manpage of TEST</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+test - check file types and compare values
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>test</B>
+
+<I>EXPRESSION</I>
+<br />
+
+<B>test</B>
+
+<p>
+<br />
+
+<B>[</B>
+
+<I>EXPRESSION </I>]
+<br />
+
+<B>[</B>
+
+]
+<br />
+
+<B>[</B>
+
+<I>OPTION</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Exit with the status determined by EXPRESSION.
+<DL COMPACT>
+<DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+An omitted EXPRESSION defaults to false.  Otherwise,
+EXPRESSION is true or false and sets exit status.  It is one of:
+<DL COMPACT>
+<DT>( EXPRESSION )</DT><DD>
+EXPRESSION is true
+</DD><DT>! EXPRESSION</DT><DD>
+EXPRESSION is false
+</DD><DT>EXPRESSION1 <B>-a</B> EXPRESSION2</DT><DD>
+both EXPRESSION1 and EXPRESSION2 are true
+</DD><DT>EXPRESSION1 <B>-o</B> EXPRESSION2</DT><DD>
+either EXPRESSION1 or EXPRESSION2 is true
+</DD><DT><B>-n</B> STRING</DT><DD>
+the length of STRING is nonzero
+</DD><DT>STRING</DT><DD>
+equivalent to <B>-n</B> STRING
+</DD><DT><B>-z</B> STRING</DT><DD>
+the length of STRING is zero
+</DD><DT>STRING1 = STRING2</DT><DD>
+the strings are equal
+</DD><DT>STRING1 != STRING2</DT><DD>
+the strings are not equal
+</DD><DT>INTEGER1 <B>-eq</B> INTEGER2</DT><DD>
+INTEGER1 is equal to INTEGER2
+</DD><DT>INTEGER1 <B>-ge</B> INTEGER2</DT><DD>
+INTEGER1 is greater than or equal to INTEGER2
+</DD><DT>INTEGER1 <B>-gt</B> INTEGER2</DT><DD>
+INTEGER1 is greater than INTEGER2
+</DD><DT>INTEGER1 <B>-le</B> INTEGER2</DT><DD>
+INTEGER1 is less than or equal to INTEGER2
+</DD><DT>INTEGER1 <B>-lt</B> INTEGER2</DT><DD>
+INTEGER1 is less than INTEGER2
+</DD><DT>INTEGER1 <B>-ne</B> INTEGER2</DT><DD>
+INTEGER1 is not equal to INTEGER2
+</DD><DT>FILE1 <B>-ef</B> FILE2</DT><DD>
+FILE1 and FILE2 have the same device and inode numbers
+</DD><DT>FILE1 <B>-nt</B> FILE2</DT><DD>
+FILE1 is newer (modification date) than FILE2
+</DD><DT>FILE1 <B>-ot</B> FILE2</DT><DD>
+FILE1 is older than FILE2
+</DD><DT><B>-b</B> FILE</DT><DD>
+FILE exists and is block special
+</DD><DT><B>-c</B> FILE</DT><DD>
+FILE exists and is character special
+</DD><DT><B>-d</B> FILE</DT><DD>
+FILE exists and is a directory
+</DD><DT><B>-e</B> FILE</DT><DD>
+FILE exists
+</DD><DT><B>-f</B> FILE</DT><DD>
+FILE exists and is a regular file
+</DD><DT><B>-g</B> FILE</DT><DD>
+FILE exists and is set-group-ID
+</DD><DT><B>-G</B> FILE</DT><DD>
+FILE exists and is owned by the effective group ID
+</DD><DT><B>-h</B> FILE</DT><DD>
+FILE exists and is a symbolic link (same as <B>-L</B>)
+</DD><DT><B>-k</B> FILE</DT><DD>
+FILE exists and has its sticky bit set
+</DD><DT><B>-L</B> FILE</DT><DD>
+FILE exists and is a symbolic link (same as <B>-h</B>)
+</DD><DT><B>-O</B> FILE</DT><DD>
+FILE exists and is owned by the effective user ID
+</DD><DT><B>-p</B> FILE</DT><DD>
+FILE exists and is a named pipe
+</DD><DT><B>-r</B> FILE</DT><DD>
+FILE exists and read permission is granted
+</DD><DT><B>-s</B> FILE</DT><DD>
+FILE exists and has a size greater than zero
+</DD><DT><B>-S</B> FILE</DT><DD>
+FILE exists and is a socket
+</DD><DT><B>-t</B> FD</DT><DD>
+file descriptor FD is opened on a terminal
+</DD><DT><B>-u</B> FILE</DT><DD>
+FILE exists and its set-user-ID bit is set
+</DD><DT><B>-w</B> FILE</DT><DD>
+FILE exists and write permission is granted
+</DD><DT><B>-x</B> FILE</DT><DD>
+FILE exists and execute (or search) permission is granted
+</DD></DL>
+<p>
+
+Except for <B>-h</B> and <B>-L</B>, all FILE-related tests dereference symbolic links.
+Beware that parentheses need to be escaped (e.g., by backslashes) for shells.
+INTEGER may also be <B>-l</B> STRING, which evaluates to the length of STRING.
+<p>
+
+NOTE: [ honors the <B>--help</B> and <B>--version</B> options, but test does not.
+test treats each of those as it treats any other nonempty STRING.
+<p>
+
+NOTE: your shell may have its own version of test and/or [, which usually supersedes
+the version described here.  Please refer to your shell's documentation
+for details about the options it supports.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Kevin Braunsdorf and Matthew Bradburn.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report [ translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/[">http://www.gnu.org/software/coreutils/[</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) test invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

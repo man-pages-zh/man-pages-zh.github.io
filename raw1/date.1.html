@@ -1,0 +1,256 @@
+<html><head><title>Manpage of DATE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+date - print or set the system date and time
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>date</B>
+
+[<I>OPTION</I>]... [<I>+FORMAT</I>]
+<br />
+
+<B>date</B>
+
+[<I>-u|--utc|--universal</I>] [<I>MMDDhhmm</I>[[<I>CC</I>]<I>YY</I>][<I>.ss</I>]]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Display the current time in the given FORMAT, or set the system date.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-d</B>, <B>--date</B>=<I>STRING</I></DT><DD>
+display time described by STRING, not 'now'
+</DD><DT><B>-f</B>, <B>--file</B>=<I>DATEFILE</I></DT><DD>
+like <B>--date</B> once for each line of DATEFILE
+</DD><DT><B>-I[TIMESPEC]</B>, <B>--iso-8601</B>[=<I>TIMESPEC</I>]</DT><DD>
+output date/time in ISO 8601 format.
+TIMESPEC='date' for date only (the default),
+'hours', 'minutes', 'seconds', or 'ns' for date
+and time to the indicated precision.
+</DD><DT><B>-r</B>, <B>--reference</B>=<I>FILE</I></DT><DD>
+display the last modification time of FILE
+</DD><DT><B>-R</B>, <B>--rfc-2822</B></DT><DD>
+output date and time in RFC 2822 format.
+Example: Mon, 07 Aug 2006 12:34:56 <B>-0600</B>
+</DD><DT><B>--rfc-3339</B>=<I>TIMESPEC</I></DT><DD>
+output date and time in RFC 3339 format.
+TIMESPEC='date', 'seconds', or 'ns' for
+date and time to the indicated precision.
+Date and time components are separated by
+a single space: 2006-08-07 12:34:56-06:00
+</DD><DT><B>-s</B>, <B>--set</B>=<I>STRING</I></DT><DD>
+set time described by STRING
+</DD><DT><B>-u</B>, <B>--utc</B>, <B>--universal</B></DT><DD>
+print or set Coordinated Universal Time (UTC)
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+FORMAT controls the output.  Interpreted sequences are:
+<DL COMPACT>
+<DT>%%</DT><DD>
+a literal %
+</DD><DT>%a</DT><DD>
+locale's abbreviated weekday name (e.g., Sun)
+</DD><DT>%A</DT><DD>
+locale's full weekday name (e.g., Sunday)
+</DD><DT>%b</DT><DD>
+locale's abbreviated month name (e.g., Jan)
+</DD><DT>%B</DT><DD>
+locale's full month name (e.g., January)
+</DD><DT>%c</DT><DD>
+locale's date and time (e.g., Thu Mar  3 23:05:25 2005)
+</DD><DT>%C</DT><DD>
+century; like %Y, except omit last two digits (e.g., 20)
+</DD><DT>%d</DT><DD>
+day of month (e.g., 01)
+</DD><DT>%D</DT><DD>
+date; same as %m/%d/%y
+</DD><DT>%e</DT><DD>
+day of month, space padded; same as %_d
+</DD><DT>%F</DT><DD>
+full date; same as %Y-%m-%d
+</DD><DT>%g</DT><DD>
+last two digits of year of ISO week number (see %G)
+</DD><DT>%G</DT><DD>
+year of ISO week number (see %V); normally useful only with %V
+</DD><DT>%h</DT><DD>
+same as %b
+</DD><DT>%H</DT><DD>
+hour (00..23)
+</DD><DT>%I</DT><DD>
+hour (01..12)
+</DD><DT>%j</DT><DD>
+day of year (001..366)
+</DD><DT>%k</DT><DD>
+hour, space padded ( 0..23); same as %_H
+</DD><DT>%l</DT><DD>
+hour, space padded ( 1..12); same as %_I
+</DD><DT>%m</DT><DD>
+month (01..12)
+</DD><DT>%M</DT><DD>
+minute (00..59)
+</DD><DT>%n</DT><DD>
+a newline
+</DD><DT>%N</DT><DD>
+nanoseconds (000000000..999999999)
+</DD><DT>%p</DT><DD>
+locale's equivalent of either AM or PM; blank if not known
+</DD><DT>%P</DT><DD>
+like %p, but lower case
+</DD><DT>%r</DT><DD>
+locale's 12-hour clock time (e.g., 11:11:04 PM)
+</DD><DT>%R</DT><DD>
+24-hour hour and minute; same as %H:%M
+</DD><DT>%s</DT><DD>
+seconds since 1970-01-01 00:00:00 UTC
+</DD><DT>%S</DT><DD>
+second (00..60)
+</DD><DT>%t</DT><DD>
+a tab
+</DD><DT>%T</DT><DD>
+time; same as %H:%M:%S
+</DD><DT>%u</DT><DD>
+day of week (1..7); 1 is Monday
+</DD><DT>%U</DT><DD>
+week number of year, with Sunday as first day of week (00..53)
+</DD><DT>%V</DT><DD>
+ISO week number, with Monday as first day of week (01..53)
+</DD><DT>%w</DT><DD>
+day of week (0..6); 0 is Sunday
+</DD><DT>%W</DT><DD>
+week number of year, with Monday as first day of week (00..53)
+</DD><DT>%x</DT><DD>
+locale's date representation (e.g., 12/31/99)
+</DD><DT>%X</DT><DD>
+locale's time representation (e.g., 23:13:48)
+</DD><DT>%y</DT><DD>
+last two digits of year (00..99)
+</DD><DT>%Y</DT><DD>
+year
+</DD><DT>%z</DT><DD>
++hhmm numeric time zone (e.g., <B>-0400</B>)
+</DD><DT>%:z</DT><DD>
++hh:mm numeric time zone (e.g., <B>-04</B>:00)
+</DD><DT>%::z</DT><DD>
++hh:mm:ss numeric time zone (e.g., <B>-04</B>:00:00)
+</DD><DT>%:::z</DT><DD>
+numeric time zone with : to necessary precision (e.g., <B>-04</B>, +05:30)
+</DD><DT>%Z</DT><DD>
+alphabetic time zone abbreviation (e.g., EDT)
+</DD></DL>
+<p>
+
+By default, date pads numeric fields with zeroes.
+The following optional flags may follow '%':
+<DL COMPACT>
+<DT>-</DT><DD>
+(hyphen) do not pad the field
+</DD><DT>_</DT><DD>
+(underscore) pad with spaces
+</DD><DT>0</DT><DD>
+(zero) pad with zeros
+</DD><DT>^</DT><DD>
+use upper case if possible
+</DD><DT>#</DT><DD>
+use opposite case if possible
+</DD></DL>
+<p>
+
+After any flags comes an optional field width, as a decimal number;
+then an optional modifier, which is either
+E to use the locale's alternate representations if available, or
+O to use the locale's alternate numeric symbols if available.
+</div>
+<h2>EXAMPLES</h2>
+<div class="content">
+
+Convert seconds since the epoch (1970-01-01 UTC) to a date
+<DL COMPACT>
+<DT></DT><DD>
+<tt>$ date --date='@2147483647'</tt>
+</DD></DL>
+<p>
+
+Show the time on the west coast of the US (use <a href="../man1/tzselect.1.html">tzselect</a>(1) to find TZ)
+<DL COMPACT>
+<DT></DT><DD>
+<tt>$ TZ='America/Los_Angeles' date</tt>
+</DD></DL>
+<p>
+
+Show the local time for 9AM next Friday on the west coast of the US
+<DL COMPACT>
+<DT></DT><DD>
+<tt>$ date --date='TZ=&quot;America/Los_Angeles&quot; 09:00 next Fri'</tt>
+</DD></DL>
+</div>
+<h2>DATE STRING</h2>
+<div class="content">
+
+
+The --date=STRING is a mostly free format human readable date string
+such as &quot;Sun, 29 Feb 2004 16:21:42 -0800&quot; or &quot;2004-02-29 16:21:42&quot; or
+even &quot;next Thursday&quot;.  A date string may contain items indicating
+calendar date, time of day, time zone, day of week, relative time,
+relative date, and numbers.  An empty string indicates the beginning
+of the day.  The date string format is more complex than is easily
+documented here but is fully described in the info documentation.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report date translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/date">http://www.gnu.org/software/coreutils/date</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) date invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

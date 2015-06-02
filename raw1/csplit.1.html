@@ -1,0 +1,108 @@
+<html><head><title>Manpage of CSPLIT</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+csplit - split a file into sections determined by context lines
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>csplit</B>
+
+[<I>OPTION</I>]... <I>FILE PATTERN</I>...
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Output pieces of FILE separated by PATTERN(s) to files 'xx00', 'xx01', ...,
+and output byte counts of each piece to standard output.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-b</B>, <B>--suffix-format</B>=<I>FORMAT</I></DT><DD>
+use sprintf FORMAT instead of %02d
+</DD><DT><B>-f</B>, <B>--prefix</B>=<I>PREFIX</I></DT><DD>
+use PREFIX instead of 'xx'
+</DD><DT><B>-k</B>, <B>--keep-files</B></DT><DD>
+do not remove output files on errors
+</DD><DT><B>-m</B>, <B>--suppress-matched</B></DT><DD>
+suppress the lines matching PATTERN
+</DD><DT><B>-n</B>, <B>--digits</B>=<I>DIGITS</I></DT><DD>
+use specified number of digits instead of 2
+</DD><DT><B>-s</B>, <B>--quiet</B>, <B>--silent</B></DT><DD>
+do not print counts of output file sizes
+</DD><DT><B>-z</B>, <B>--elide-empty-files</B></DT><DD>
+remove empty output files
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Read standard input if FILE is -.  Each PATTERN may be:
+<DL COMPACT>
+<DT>INTEGER</DT><DD>
+copy up to but not including specified line number
+</DD><DT>/REGEXP/[OFFSET]</DT><DD>
+copy up to but not including a matching line
+</DD><DT>%REGEXP%[OFFSET]</DT><DD>
+skip to, but not including a matching line
+</DD><DT>{INTEGER}</DT><DD>
+repeat the previous pattern specified number of times
+</DD><DT>{*}</DT><DD>
+repeat the previous pattern as many times as possible
+</DD></DL>
+<p>
+
+A line OFFSET is a required '+' or '-' followed by a positive integer.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Stuart Kemp and David MacKenzie.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report csplit translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/csplit">http://www.gnu.org/software/coreutils/csplit</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) csplit invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

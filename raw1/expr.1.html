@@ -1,0 +1,132 @@
+<html><head><title>Manpage of EXPR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+expr - evaluate expressions
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>expr</B>
+
+<I>EXPRESSION</I>
+<br />
+
+<B>expr</B>
+
+<I>OPTION</I>
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<DL COMPACT>
+<DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+Print the value of EXPRESSION to standard output.  A blank line below
+separates increasing precedence groups.  EXPRESSION may be:
+<DL COMPACT>
+<DT>ARG1 | ARG2</DT><DD>
+ARG1 if it is neither null nor 0, otherwise ARG2
+</DD><DT>ARG1 &amp; ARG2</DT><DD>
+ARG1 if neither argument is null or 0, otherwise 0
+</DD><DT>ARG1 &lt; ARG2</DT><DD>
+ARG1 is less than ARG2
+</DD><DT>ARG1 &lt;= ARG2</DT><DD>
+ARG1 is less than or equal to ARG2
+</DD><DT>ARG1 = ARG2</DT><DD>
+ARG1 is equal to ARG2
+</DD><DT>ARG1 != ARG2</DT><DD>
+ARG1 is unequal to ARG2
+</DD><DT>ARG1 &gt;= ARG2</DT><DD>
+ARG1 is greater than or equal to ARG2
+</DD><DT>ARG1 &gt; ARG2</DT><DD>
+ARG1 is greater than ARG2
+</DD><DT>ARG1 + ARG2</DT><DD>
+arithmetic sum of ARG1 and ARG2
+</DD><DT>ARG1 - ARG2</DT><DD>
+arithmetic difference of ARG1 and ARG2
+</DD><DT>ARG1 * ARG2</DT><DD>
+arithmetic product of ARG1 and ARG2
+</DD><DT>ARG1 / ARG2</DT><DD>
+arithmetic quotient of ARG1 divided by ARG2
+</DD><DT>ARG1 % ARG2</DT><DD>
+arithmetic remainder of ARG1 divided by ARG2
+</DD><DT>STRING : REGEXP</DT><DD>
+anchored pattern match of REGEXP in STRING
+</DD><DT>match STRING REGEXP</DT><DD>
+same as STRING : REGEXP
+</DD><DT>substr STRING POS LENGTH</DT><DD>
+substring of STRING, POS counted from 1
+</DD><DT>index STRING CHARS</DT><DD>
+index in STRING where any CHARS is found, or 0
+</DD><DT>length STRING</DT><DD>
+length of STRING
+</DD><DT>+ TOKEN</DT><DD>
+interpret TOKEN as a string, even if it is a
+</DD><DT></DT><DD>
+keyword like 'match' or an operator like '/'
+</DD><DT>( EXPRESSION )</DT><DD>
+value of EXPRESSION
+</DD></DL>
+<p>
+
+Beware that many operators need to be escaped or quoted for shells.
+Comparisons are arithmetic if both ARGs are numbers, else lexicographical.
+Pattern matches return the string matched between \( and \) or null; if
+\( and \) are not used, they return the number of characters matched or 0.
+<p>
+
+Exit status is 0 if EXPRESSION is neither null nor 0, 1 if EXPRESSION is null
+or 0, 2 if EXPRESSION is syntactically invalid, and 3 if an error occurred.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Mike Parker, James Youngman, and Paul Eggert.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report expr translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/expr">http://www.gnu.org/software/coreutils/expr</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) expr invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>

@@ -1,0 +1,91 @@
+<html><head><title>Manpage of BASE64</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>NAME</h2>
+<div class="content">
+
+base64 - base64 encode/decode data and print to standard output
+</div>
+<h2>SYNOPSIS</h2>
+<div class="content">
+
+<B>base64</B>
+
+[<I>OPTION</I>]... [<I>FILE</I>]
+</div>
+<h2>DESCRIPTION</h2>
+<div class="content">
+
+
+<p>
+
+Base64 encode or decode FILE, or standard input, to standard output.
+<p>
+
+Mandatory arguments to long options are mandatory for short options too.
+<DL COMPACT>
+<DT><B>-d</B>, <B>--decode</B></DT><DD>
+decode data
+</DD><DT><B>-i</B>, <B>--ignore-garbage</B></DT><DD>
+when decoding, ignore non-alphabet characters
+</DD><DT><B>-w</B>, <B>--wrap</B>=<I>COLS</I></DT><DD>
+wrap encoded lines after COLS character (default 76).
+Use 0 to disable line wrapping
+</DD><DT><B>--help</B></DT><DD>
+display this help and exit
+</DD><DT><B>--version</B></DT><DD>
+output version information and exit
+</DD></DL>
+<p>
+
+With no FILE, or when FILE is -, read standard input.
+<p>
+
+The data are encoded as described for the base64 alphabet in RFC 3548.
+When decoding, the input may contain newlines in addition to the bytes of
+the formal base64 alphabet.  Use <B>--ignore-garbage</B> to attempt to recover
+from any other non-alphabet bytes in the encoded stream.
+</div>
+<h2>AUTHOR</h2>
+<div class="content">
+
+Written by Simon Josefsson.
+</div>
+<h2>REPORTING BUGS</h2>
+<div class="content">
+
+GNU coreutils online help: &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+Report base64 translation bugs to &lt;<a href="http://translationproject.org/team/">http://translationproject.org/team/</a>&gt;
+</div>
+<h2>COPYRIGHT</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>SEE ALSO</h2>
+<div class="content">
+
+Full documentation at: &lt;<a href="http://www.gnu.org/software/coreutils/base64">http://www.gnu.org/software/coreutils/base64</a>&gt;
+<br />
+
+or available locally via: info aq(coreutils) base64 invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:14 GMT, June 02, 2015</body>
+</html>
