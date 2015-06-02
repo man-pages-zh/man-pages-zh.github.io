@@ -1,4 +1,4 @@
-<html><head><title>Manpage of EXPAND</title>
+<html><head><title>Manpage of UNAME</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <script src="../js/jquery-2.1.4.min.js">
@@ -8,12 +8,12 @@
 <h2>名称</h2>
 <div class="content">
 
-expand - 将制表符转换为空格
+uname - 输出系统信息
 </div>
 <h2>概述</h2>
 <div class="content">
 
-<B>expand</B> [<I>选项</I>]... [<I>文件列表</I>]...
+<B>uname</B> [<I>选项</I>]...
 </div>
 <h2>描述</h2>
 <div class="content">
@@ -21,17 +21,26 @@ expand - 将制表符转换为空格
 
 <p>
 
-将所列文件中的制表符转换为空格，且输出到标准输出。如果没有指定文件，或者指定文件为“-”，则从标准输入读取。
-<p>
-
-必选参数对长短选项同时适用。
+输出特定的系统信息。如果没有给定选项，则与 <B>-s</B> 相同。
 <DL COMPACT>
-<DT><B>-i</B>, <B>--initial</B></DT><DD>
-不转换非空白符后的制表符
-</DD><DT><B>-t</B>, <B>--tabs</B>=<I>数值</I></DT><DD>
-设置每个制表符为指定数值的宽度，而不是默认的 8
-</DD><DT><B>-t</B>, <B>--tabs</B>=<I>列表</I></DT><DD>
-使用明确的制表位置列表，用逗号分隔
+<DT><B>-a</B>, <B>--all</B></DT><DD>
+按照如下所述的顺序输出全部信息，在信息未知的情况下会忽略 <B>-p</B> 和 <B>-i</B> 选项：
+</DD><DT><B>-s</B>, <B>--kernel-name</B></DT><DD>
+输出内核名称
+</DD><DT><B>-n</B>, <B>--nodename</B></DT><DD>
+输出网络节点主机名
+</DD><DT><B>-r</B>, <B>--kernel-release</B></DT><DD>
+输出内核发行版本
+</DD><DT><B>-v</B>, <B>--kernel-version</B></DT><DD>
+输出内核版本信息
+</DD><DT><B>-m</B>, <B>--machine</B></DT><DD>
+输出机器硬件名称
+</DD><DT><B>-p</B>, <B>--processor</B></DT><DD>
+输出处理器类型或 &quot;unknown&quot;
+</DD><DT><B>-i</B>, <B>--hardware-platform</B></DT><DD>
+输出硬件平台信息或 &quot;unknown&quot;
+</DD><DT><B>-o</B>, <B>--operating-system</B></DT><DD>
+输出操作系统信息
 </DD><DT><B>--help</B></DT><DD>
 显示此帮助信息并退出
 </DD><DT><B>--version</B></DT><DD>
@@ -49,7 +58,7 @@ expand - 将制表符转换为空格
 GNU coreutils 的在线帮助： &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
 <br />
 
-请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 expand 的翻译错误。
+请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 uname 的翻译错误。
 </div>
 <h2>版权</h2>
 <div class="content">
@@ -64,15 +73,15 @@ NO WARRANTY, to the extent permitted by law.
 <h2>参见</h2>
 <div class="content">
 
-<a href="../man1/unexpand.1.html">unexpand</a>(1)
+<a href="../man1/arch.1.html">arch</a>(1), <a href="../man2/uname.2.html">uname</a>(2)
 <p>
 
 <br />
 
-完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/expand">http://www.gnu.org/software/coreutils/expand</a>&gt;
+完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/uname">http://www.gnu.org/software/coreutils/uname</a>&gt;
 <br />
 
-或者在本地使用： info aq(coreutils) expand invocationaq
+或者在本地使用： info aq(coreutils) uname invocationaq
 <p>
 
 </div></div>

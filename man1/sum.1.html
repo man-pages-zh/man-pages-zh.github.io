@@ -1,4 +1,4 @@
-<html><head><title>Manpage of SYNC</title>
+<html><head><title>Manpage of SUM</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <script src="../js/jquery-2.1.4.min.js">
@@ -8,12 +8,12 @@
 <h2>名称</h2>
 <div class="content">
 
-sync - 清空文件系统缓冲区
+sum - 求校验和并统计文件块数目
 </div>
 <h2>概述</h2>
 <div class="content">
 
-<B>sync</B> [<I>选项</I>]
+<B>sum</B> [<I>选项</I>]... [<I>文件列表</I>]...
 </div>
 <h2>描述</h2>
 <div class="content">
@@ -21,18 +21,25 @@ sync - 清空文件系统缓冲区
 
 <p>
 
-强迫将已更改的数据写入磁盘，并更新超级块。
+打印校验和以及文件列表中每一个文件的文件块数目。
 <DL COMPACT>
-<DT><B>--help</B></DT><DD>
+<DT><B>-r</B></DT><DD>
+使用 BSD 求和算法，使用 1K 文件块
+</DD><DT><B>-s</B>, <B>--sysv</B></DT><DD>
+使用 System V 求和算法，使用 512 字节文件块
+</DD><DT><B>--help</B></DT><DD>
 显示此帮助信息并退出
 </DD><DT><B>--version</B></DT><DD>
 显示版本信息并退出
 </DD></DL>
+<p>
+
+如果没有指定文件，或者指定文件为“-”，则从标准输入读取。
 </div>
 <h2>作者</h2>
 <div class="content">
 
-由 Jim Meyering 编写。
+由 Kayvan Aghaiepour 和 David MacKenzie 编写。
 </div>
 <h2>报告错误</h2>
 <div class="content">
@@ -40,7 +47,7 @@ sync - 清空文件系统缓冲区
 GNU coreutils 的在线帮助： &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
 <br />
 
-请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 sync 的翻译错误。
+请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 sum 的翻译错误。
 </div>
 <h2>版权</h2>
 <div class="content">
@@ -55,15 +62,10 @@ NO WARRANTY, to the extent permitted by law.
 <h2>参见</h2>
 <div class="content">
 
-<a href="../man2/sync.2.html">sync</a>(2)
-<p>
-
+完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/sum">http://www.gnu.org/software/coreutils/sum</a>&gt;
 <br />
 
-完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/sync">http://www.gnu.org/software/coreutils/sync</a>&gt;
-<br />
-
-或者在本地使用： info aq(coreutils) sync invocationaq
+或者在本地使用： info aq(coreutils) sum invocationaq
 <p>
 
 </div></div>

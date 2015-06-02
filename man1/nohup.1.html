@@ -1,4 +1,4 @@
-<html><head><title>Manpage of SYNC</title>
+<html><head><title>Manpage of NOHUP</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <script src="../js/jquery-2.1.4.min.js">
@@ -8,12 +8,15 @@
 <h2>名称</h2>
 <div class="content">
 
-sync - 清空文件系统缓冲区
+nohup - 使程序运行时不挂起，不向 tty 输出信息
 </div>
 <h2>概述</h2>
 <div class="content">
 
-<B>sync</B> [<I>选项</I>]
+<B>nohup</B> <I>命令 </I>[<I>参数列表</I>]...
+<br />
+
+<B>nohup</B> <I>选项</I>
 </div>
 <h2>描述</h2>
 <div class="content">
@@ -21,13 +24,21 @@ sync - 清空文件系统缓冲区
 
 <p>
 
-强迫将已更改的数据写入磁盘，并更新超级块。
+运行命令，并忽略挂起信号。
 <DL COMPACT>
 <DT><B>--help</B></DT><DD>
 显示此帮助信息并退出
 </DD><DT><B>--version</B></DT><DD>
 显示版本信息并退出
 </DD></DL>
+<p>
+
+如果标准输入来自终端，则从 <I>/dev/null</I> 重定向至标准输入；如果标准输出定向至终端，则在可能的情况下将输出附加在 'nohup.out'
+文件后，否则附加到 '$HOME/nohup.out'。如果标准错误定向至终端，则重定向至标准输出。使用“nohup 命令 &gt;
+文件”可将输出保存到指定文件。
+<p>
+
+注意：您的 shell 可能内置了自己的 nohup 程序版本，它通常会覆盖这里所提及的相应版本。请查阅您的 shell 文档获知它所支持的选项。
 </div>
 <h2>作者</h2>
 <div class="content">
@@ -40,7 +51,7 @@ sync - 清空文件系统缓冲区
 GNU coreutils 的在线帮助： &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
 <br />
 
-请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 sync 的翻译错误。
+请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 nohup 的翻译错误。
 </div>
 <h2>版权</h2>
 <div class="content">
@@ -55,15 +66,10 @@ NO WARRANTY, to the extent permitted by law.
 <h2>参见</h2>
 <div class="content">
 
-<a href="../man2/sync.2.html">sync</a>(2)
-<p>
-
+完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/nohup">http://www.gnu.org/software/coreutils/nohup</a>&gt;
 <br />
 
-完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/sync">http://www.gnu.org/software/coreutils/sync</a>&gt;
-<br />
-
-或者在本地使用： info aq(coreutils) sync invocationaq
+或者在本地使用： info aq(coreutils) nohup invocationaq
 <p>
 
 </div></div>

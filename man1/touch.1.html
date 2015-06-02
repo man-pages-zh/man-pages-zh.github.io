@@ -1,0 +1,110 @@
+<html><head><title>Manpage of TOUCH</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>名称</h2>
+<div class="content">
+
+touch - 改变文件时间戳
+</div>
+<h2>概述</h2>
+<div class="content">
+
+<B>touch</B> [<I>选项</I>]... <I>文件列表</I>...
+</div>
+<h2>描述</h2>
+<div class="content">
+
+
+<p>
+
+将每个文件的访问时间和修改时间更新为当前时间。
+<p>
+
+除非提供了 <B>-c</B> 或 <B>-h</B> 参数，否则程序会在文件不存在时创建一个空文件。
+<p>
+
+如果文件列表参数中有连字符“-”，它将被 touch 特别处理，并更改与标准输出相关联的文件的相应时间信息。
+<p>
+
+必选参数对长短选项同时适用。
+<DL COMPACT>
+<DT><B>-a</B></DT><DD>
+仅更改文件访问时间
+</DD><DT><B>-c</B>, <B>--no-create</B></DT><DD>
+不要创建任何文件
+</DD><DT><B>-d</B>, <B>--date</B>=<I>字符串</I></DT><DD>
+使用指定字符串所表示的时间而非当前时间
+</DD><DT><B>-f</B></DT><DD>
+（被忽略的选项）
+</DD><DT><B>-h</B>, <B>--no-dereference</B></DT><DD>
+影响所有符号链接而非被引用的文件（仅在能够更改符号链接的时间戳的系统上有用）
+</DD><DT><B>-m</B></DT><DD>
+仅更改文件修改时间
+</DD><DT><B>-r</B>, <B>--reference</B>=<I>文件</I></DT><DD>
+使用指定文件的时间代替当前时间
+</DD><DT><B>-t</B> STAMP</DT><DD>
+使用 [[CC]YY]MMDDhhmm[.ss] 代替当前时间
+</DD><DT><B>--time</B>=<I>关键字</I></DT><DD>
+改变文件的指定时间：若关键字是 access，atime 或 use，则等同于 <B>-a</B>；若关键字是 modify 或 mtime，则等同于
+<B>-m</B>
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<p>
+
+请注意 <B>-d</B> 和 <B>-t</B> 选项接受的时间-日期格式有所不同。
+</div>
+<h2>日期字符串</h2>
+<div class="content">
+
+
+“--date=字符串”选项中的的字符串可以是人类易于理解阅读的日期字符串，例如 &quot;Sun, 29 Feb 2004 16:21:42 -0800&quot; 或
+&quot;2004-02-29 16:21:42&quot;，甚至可以是 &quot;next
+Thursday&quot;。一个日期字符串可能包含表示日历日期、一日中的具体时间、时区、星期、相对时间、相对日期和数字的信息。一个空字符串表示当日的起始。日期字符串的具体格式较为复杂，在手册页中难以简单描述清楚，但是您可以在
+info 文档中找到完整内容。
+</div>
+<h2>作者</h2>
+<div class="content">
+
+由 Paul Rubin, Arnold Robbins, Jim Kingdon David MacKenzie 和 Randy Smith 编写。
+</div>
+<h2>报告错误</h2>
+<div class="content">
+
+GNU coreutils 的在线帮助： &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 touch 的翻译错误。
+</div>
+<h2>版权</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div class="content">
+
+完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/touch">http://www.gnu.org/software/coreutils/touch</a>&gt;
+<br />
+
+或者在本地使用： info aq(coreutils) touch invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 10:53:13 GMT, June 02, 2015</body>
+</html>
