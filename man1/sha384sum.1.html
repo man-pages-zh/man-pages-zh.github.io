@@ -1,0 +1,96 @@
+<html><head><title>Manpage of SHA384SUM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>名称</h2>
+<div class="content">
+
+sha384sum - 计算并校验 SHA384 信息摘要
+</div>
+<h2>概述</h2>
+<div class="content">
+
+<B>sha384sum</B> [<I>选项</I>]... [<I>文件列表</I>]...
+</div>
+<h2>描述</h2>
+<div class="content">
+
+
+<p>
+
+输出或检查 SHA384 (384位) 校验和。如果没有给出文件参数，或者文件参数是“-”，则从标准输入读取。
+<DL COMPACT>
+<DT><B>-b</B>, <B>--binary</B></DT><DD>
+以二进制模式读入
+</DD><DT><B>-c</B>, <B>--check</B></DT><DD>
+从指定文件中读取 SHA384 文件校验和信息并对它们进行检查
+</DD><DT><B>--tag</B></DT><DD>
+创建一个 BSD 风格的校验和
+</DD><DT><B>-t</B>, <B>--text</B></DT><DD>
+以文本模式读入（默认）
+</DD></DL>
+<h3>下面四个选项仅在验证校验和时有用：</h3>
+
+<DL COMPACT>
+<DT><B>--quiet</B></DT><DD>
+不要为每个成功验证的文件显示成功信息
+</DD><DT><B>--status</B></DT><DD>
+不要输出任何信息，由返回值判断成功与否
+</DD><DT><B>--strict</B></DT><DD>
+为没有正确格式化的校验和文字行给出非零返回值
+</DD><DT><B>-w</B>, <B>--warn</B></DT><DD>
+为没有正确格式化的校验和文字行给出警告信息
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<p>
+
+校验和按照 FIPS-180-2
+描述的方式进行计算。在校验过程中，其输入内容应当为该程序先前的输出内容。默认模式是输出一行文字，包含校验和、一个指示输入模式的字符（'*'
+表示二进制输入，空格表示字符输入）以及每个文件的名称。
+</div>
+<h2>作者</h2>
+<div class="content">
+
+由 Ulrich Drepper, Scott Miller 和 David Madore 编写。
+</div>
+<h2>报告错误</h2>
+<div class="content">
+
+GNU coreutils 的在线帮助： &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 sha384sum
+的翻译错误。
+</div>
+<h2>版权</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div class="content">
+
+完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/sha384sum">http://www.gnu.org/software/coreutils/sha384sum</a>&gt;
+<br />
+
+或者在本地使用： info aq(coreutils) sha2 utilitiesaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 14:42:02 GMT, August 11, 2015</body>
+</html>

@@ -1,0 +1,122 @@
+<html><head><title>Manpage of RM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/jquery-2.1.4.min.js">
+</script><script src="../js/collate.js"></script></head><body>
+<div id="main">
+
+<h2>名称</h2>
+<div class="content">
+
+rm - 移除文件或者目录
+</div>
+<h2>概述</h2>
+<div class="content">
+
+<B>rm</B> [<I>选项</I>]... <I>文件列表</I>...
+</div>
+<h2>描述</h2>
+<div class="content">
+
+本手册页记录 GNU 版本的 <B>rm</B>。<B>rm</B> 移除每一个指定的文件。默认情况下，它不删除目录。
+
+如果指定 <I>-I</I> 或 <I>--interactive=once</I> 选项，且给出了三个以上的文件或指定了 <I>-r</I>, <I>-R</I> 或
+<I>--recursive</I> 选项，则 <B>rm</B> 将提示并询问用户是否继续进行整个操作。如果未得到用户的确认，则整个命令将被中止。
+
+否则，如果一个文件不可写、标准输入是一个终端且未给出 <I>-f</I> 或 <I>--force</I> 选项，或 <I>--interactive=always</I>
+选项被给出， <B>rm</B> 将提示用户是否删除该文件。如果未得到用户的确认，则该文件将被跳过。
+</div>
+<h2>选项</h2>
+<div class="content">
+
+<p>
+
+删除 (unlink) 给定文件。
+<DL COMPACT>
+<DT><B>-f</B>, <B>--force</B></DT><DD>
+忽略不存在的文件和参数，从不提示
+</DD><DT><B>-i</B></DT><DD>
+在每次删除前提示
+</DD><DT><B>-I</B></DT><DD>
+在进行递归删除或删除多于三个文件之前提示用户一次；与 <B>-i</B> 相比较更少干扰用户，但是仍然为大多数操作失误起到保护作用。
+</DD><DT><B>--interactive</B>[=<I>WHEN</I>]</DT><DD>
+根据 WHEN 确定提示用户的频率： &quot;never&quot;（从不）、&quot;once&quot; (<B>-I</B>)、或者 &quot;always&quot; (<B>-i</B>)；如果没有给定
+WHEN 参数，则总是提示用户。
+</DD><DT><B>--one-file-system</B></DT><DD>
+在递归地删除一个目录结构时，跳过与对应命令行参数不在同一个文件系统中的所有目录
+</DD><DT><B>--no-preserve-root</B></DT><DD>
+不对 '/' 做特殊处理
+</DD><DT><B>--preserve-root</B></DT><DD>
+不删除 '/'（默认）
+</DD><DT><B>-r</B>, <B>-R</B>, <B>--recursive</B></DT><DD>
+递归地移除目录及它们的内容
+</DD><DT><B>-d</B>, <B>--dir</B></DT><DD>
+删除空目录
+</DD><DT><B>-v</B>, <B>--verbose</B></DT><DD>
+解释正在发生的情况
+</DD><DT><B>--help</B></DT><DD>
+显示此帮助信息并退出
+</DD><DT><B>--version</B></DT><DD>
+显示版本信息并退出
+</DD></DL>
+<p>
+
+默认情况下，rm 不移除目录。可以使用 <B>--recursive</B>（<B>-r</B> 或 <B>-R</B>）选项来同时移除列出的每个目录及其内容。
+<p>
+
+如果需要删除一个文件名以连字符 “-”起始的文件，例如 '-foo'，请使用下列命令：
+<DL COMPACT>
+<DT></DT><DD>
+rm <B>--</B> <B>-foo</B>
+</DD><DT></DT><DD>
+rm ./-foo
+</DD></DL>
+<p>
+
+请注意，如果你使用 rm
+删除一个文件，在有足够技术水平和/或时间的情况下，它的部分内容可能仍然能够被恢复。如果需要更高的保障来使得文件内容不可恢复，请考虑使用 shred.
+</div>
+<h2>作者</h2>
+<div class="content">
+
+由 Paul Rubin, David MacKenzie, Richard M. Stallman 和 Jim Meyering 编写。
+</div>
+<h2>报告错误</h2>
+<div class="content">
+
+GNU coreutils 的在线帮助： &lt;<a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>&gt;
+<br />
+
+请向 &lt;<a href="http://translationproject.org/team/zh_CN.html">http://translationproject.org/team/zh_CN.html</a>&gt; 报告 rm 的翻译错误。
+</div>
+<h2>版权</h2>
+<div class="content">
+
+Copyright &#169; 2014 Free Software Foundation, Inc.  License GPLv3+: GNU GPL
+version 3 or later &lt;<a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>&gt;.
+<br />
+
+This is free software: you are free to change and redistribute it.  There is
+NO WARRANTY, to the extent permitted by law.
+</div>
+<h2>参见</h2>
+<div class="content">
+
+<a href="../man1/unlink.1.html">unlink</a>(1), <a href="../man2/unlink.2.html">unlink</a>(2), <a href="../man1/chattr.1.html">chattr</a>(1), <a href="../man1/shred.1.html">shred</a>(1)
+<p>
+
+<br />
+
+完整文档请见： &lt;<a href="http://www.gnu.org/software/coreutils/rm">http://www.gnu.org/software/coreutils/rm</a>&gt;
+<br />
+
+或者在本地使用： info aq(coreutils) rm invocationaq
+<p>
+
+</div></div>
+<hr>
+This document was created by
+<a href="http://github.com/man-pages-zh/man2html/">man2html</a>,
+using the manual pages.<br>
+Time: 14:42:02 GMT, August 11, 2015</body>
+</html>
